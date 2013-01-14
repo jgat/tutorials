@@ -1,0 +1,301 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\newcommand{\n}{\sim}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\begin{document}
+
+\begin{frame}
+\frametitle{Question 1}
+Write negations for each of the following statements:
+
+\begin{enumerate}
+\item
+"John is 6 feet tall and he weights at least 200 pounds."
+
+\pause
+"John is not 6 feet tall, or he weighs less than 200 pounds."
+
+\pause
+\item
+$-1 < x \leq 4$.
+
+\pause
+$x \leq -1$ or $x > 4$. ($\lor$ may be used instead of "or")
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 2}
+Show that the following statements $P$ and $Q$ are logically equivalent:
+\[ P : \; \n ( \n p \land q) \land (p \lor q) \land q \]
+\[ Q : \; p \land q \]
+
+\pause
+\begin{tabular}{cc|c|c}
+p & q & P & Q \\
+\hline
+T & T & T & T \\
+T & F & F & F \\
+F & F & F & F \\
+F & F & F & F
+\end{tabular}
+
+or,
+\[ P \equiv (q \to p) \land (p \lor q) \land q
+     \equiv (q \to p) \land q
+     \equiv p \land q = Q \]
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 3}
+
+Write the negations for each of the following statements.
+
+\begin{enumerate}
+\item
+"If my car is in the repair shop, then I cannot get to class."
+
+\pause
+"My car is in the repair shop and I can get to class."
+
+\pause
+\item
+"If Sara lives in Athens, then she lives in Greece."
+
+\pause
+"Sara lives in Athens, but not in Greece."
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 4}
+Rewrite the following statements in the form "If A then B":
+\begin{enumerate}
+\item
+Pia's birth on U.S. soil is a sufficient condition for her to be a U.S. citizen.
+
+\pause
+If (Pia is born on U.S. soil), then (Pia is a U.S. citizen).
+
+\pause
+\item
+George's attaining age 35 is a necessary condition for his being president of
+the U.S.
+
+\pause
+If (George is president of the U.S.), then (George has attained age 35).
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 5}
+Is the following argument valid or invalid?
+\[
+    (p \lor q) \land (p \to r) \land (q \to r) \to r
+\]
+
+\pause
+Assume that it's invalid. Then,
+\begin{itemize}
+\pause
+\item $\n r$ (by assuming conclusion is false)
+\pause
+\item $\n p$ (by $p \to r$ and $\n r$)
+\pause
+\item $\n q$ (by $q \to r$ and $\n r$)
+\end{itemize}
+\pause
+But then, $p \lor q$ cannot be true. Contradiction!
+
+\pause
+So, our assumption that the argument invalid is wrong, so the argument is valid.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 6}
+Write the formal negations of the following statements. Are they true or false?
+
+\begin{enumerate}
+\item
+For all primes $p$, $p$ is odd.
+
+\pause
+"$\exists p \in \mathbb{P} : p$ is even."
+
+The negation is true, $p = 2$ is an example of an even prime. Here,
+$\mathbb{P}$ represents the set of all prime numbers.
+
+\pause
+\item
+There exists a triangle $T$ such that the sum of the angles of $T$ equals 200
+degrees.
+
+\pause
+Let $\mathbb{T}$ be the set of all triangles.
+"$\forall T \in \mathbb{T}$, the sum of the angles of $T \neq 200^\circ$."
+
+The negation is true, the sum of the angles on a triangle is $180^\circ$ for
+all triangles.
+
+(Correction 29/8/12: Used more formal mathematical language.)
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 7}
+Rewrite the following statements as quantified conditional statements.
+\begin{enumerate}
+\item
+Squareness is a sufficient condition for rectangularity.
+
+\pause
+For all polygons $P$, $P$ is a square $\to$ $P$ is a rectangle.
+
+\pause
+\item
+A product of two numbers is zero only if one of the numbers is zero.
+
+\pause
+\[
+    \forall x, y \in \mathbb{R}, \; xy = 0 \to x = 0 \lor y = 0.
+\]
+
+(Correction 29/8/12: fixed the solution.)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 8(a-b)}
+Prove the following statements:
+\begin{enumerate}
+\item
+There exists an even integer n that can be written in two ways as a sum of
+two prime numbers.
+
+\pause
+Example:
+\[
+    10 = 5 + 5 = 3 + 7.
+\]
+\pause
+\item
+For two integers $r$ and $s$, there exists an integer $k$ such that
+$22r + 18s = 2k$.
+
+\pause
+For integers $r$ and $s$, $k = 11r + 9s$ is an integer such that
+$22r + 18s = 2k$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Question 8(c-d)}
+
+\begin{enumerate}
+\item
+The sum of any two rational numbers is rational.
+
+\pause
+If $a, b$ are rational, then $a = \frac{p}{q}$, $b = \frac{r}{s}$ for some
+$p,q,r,s \in \mathbb{Z}$ where $q, s \neq 0$. \pause Then,
+\[
+    a + b = \frac{p}{q} + \frac{r}{s} = \frac{ps + qr}{qs},
+\]
+\pause
+$ps+qr, qs \in \mathbb{Z}$, and $qs \neq 0$, so $a+b$ is rational.
+
+\pause
+\item
+For all integers $a$, $b$, and $c$, if $a|b$ and $b|c$, then $a|c$.
+
+\pause
+If $a|b$ and $b|c$, then $b = ma$ and $c = nb$ for some $m, n \in \mathbb{Z}$.
+\pause Then, $c = n(ma) = (nm)a$, so $a | c$ (since $nm \in \mathbb{Z}$).
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 9}
+Prove or disprove the following statement: For all integers $a$ and $b$, if
+$a|b$ and $b|a$, then $a = b$.
+
+\pause
+$1 | -1$ and $-1 | 1$, but $1 \neq -1$, so the statement is false.
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 10}
+For an integer $m$, if $m \equiv 6 \mod 11$, what is $4m \mod 11$?
+
+\pause
+\[
+    4m \equiv 4 \cdot 6 \equiv 24 \equiv 2 \mod 11.
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 11}
+Prove the following statement: If $m$ is the square of an odd integer, then
+\[ m \equiv 1 \mod 8. \]
+
+\pause
+If $m$ is the square of an odd integer, then
+\[
+    m = (2k+1)^2 = 4k^2 + 4k + 1 = 4k(k+1) + 1
+\]
+for some $k \in \mathbb{Z}$.
+\pause
+One of $k$ and $k+1$ is even, so $k(k+1)$ is even, and $4k(k+1) = 8n$ for some
+$n \in \mathbb{Z}$.
+\pause
+So, $m = 8n + 1$, therefore $m \equiv 1 \mod 8$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 12}
+For an integer $k$, what are $\floor{k}$ and $\floor{k + \frac{1}{2}}$?
+
+\pause
+$\floor{k} = \floor{k+\frac{1}{2}} = k$.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 13}
+Prove or disprove the following statements.
+\begin{enumerate}
+\item
+For all real numbers $x$ and $y$, $\floor{x + y} = \floor{x} + \floor{y}$.
+
+\pause
+If $x = y = \frac{1}{2}$,
+\[
+    \floor{\frac{1}{2} + \frac{1}{2}} = 1
+    \neq \floor{\frac{1}{2}} + \floor{\frac{1}{2}} = 0,
+\]
+so the statement is false.
+\pause
+\item
+For all real numbers $x$ and all integers $m$, $\floor{x+m} = \floor{x} + m$.
+
+\pause
+Let $n = \floor{x}$, i.e. $n$ is an integer such that $n \leq x < n + 1$.
+
+\pause
+Then, $n + m$ is an integer s.t. $n + m \leq x + m < n + m + 1$.
+
+\pause
+Therefore, $\floor{x + m} = n + m = \floor{x} + m$.
+
+\end{enumerate}
+
+
+\end{frame}
+
+\end{document}
