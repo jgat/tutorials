@@ -5,6 +5,9 @@ A collection of content that I've prepared for classroom tutorials I deliver at 
 
 Where I can, I'm including binaries for ease of use, and raw source for ease of modification.
 
+Available content includes materials that I generated myself, and some additional material which was already
+publicly available during the offering of the course.
+
 ## Courses
 
 Tutorial material is made available from a subset of the course offerings I have tutored:
