@@ -1,6 +1,10 @@
 # Solving Time Compexity
 
-<blockquote>_Comment: This was originally a newsgroup post I wrote in November 2011 to answer a student's question about time complexity questions on the exam. After this post, I wrote a more detailed discussion in the [course notes](http://itee.uq.edu.au/~csse1001/_notes/complexity.html#calculating), based on this one._</blockquote>
+<blockquote>
+Comment: This was originally a newsgroup post I wrote in November 2011 to answer a student's question about time complexity questions on the exam. After this post, I wrote a more detailed discussion in the <a href="http://itee.uq.edu.au/~csse1001/_notes/complexity.html#calculating">course notes</a>, based on this one.
+</blockquote>
+
+_This document aims to show how to classify the time complexity of a function, as is usually required in CSSE1001 exams._
 
 * If the function has no loops of any kind (this includes places where loops can be disguised, like a list comprehension or the builtin 'sorted' and 'max' functions), then it is __constant__ time.
 
@@ -11,15 +15,13 @@ for i in range(N):
     print i
 ```
 
-* If the function has two nested loops inside each other, and the "size" of each loop is roughly proportional to the size of the input, then it is __quadratic__. For example, both of these are quadratic.
+* If the function has two nested loops inside each other, and the "size" of each loop is roughly proportional to the size of the input, then it is __quadratic__. For example, both of these are quadratic:
 
 ```python
 for i in range(N):
     for j in range(N):
         do_something(i,j)
 ```
-
-or
 
 ```python
 for i in range(N):
