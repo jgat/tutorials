@@ -3,10 +3,14 @@ tutorials
 
 A collection of content that I've prepared for classroom tutorials I deliver at the University of Queensland.
 
-Where I can, I'm including binaries for ease of use, and raw source for ease of modification.
+Where I can, I'm including binaries for ease of use, and raw source for ease of modification (e.g. LaTeX documents
+will generally have both the source `.tex` and generated `.pdf` files, as well as a makefile).
 
 Available content includes materials that I generated myself, and some additional material which was already
 publicly available during the offering of the course.
+
+To request the addition of materials, or to point out a mistake,
+[create an issue](https://github.com/jgat/tutorials/issues), or contact me directly.
 
 ## Courses
 
