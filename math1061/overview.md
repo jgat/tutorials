@@ -2,14 +2,21 @@
 
 ## Week 2
 
-* Intro (who I am, why you should come to tutorials, etc)
-* Practice in logical reasoning: explaining solutions to simple logic puzzles.
-* Truth tables
-* Application: Interpreting English language in terms of mathematical logic (e.g. sentences with "if", "necessary", etc)
+* Workbook pages 1-17
+* Intro
+  * Who I am
+  * What happens in tutorials and why you should come
+  * Asking the demographics of the class (what year level, what degree)
+* Recap on last week's lectures:
+  * Logical statements and connectives
+  * Truth tables
+  * Conditionals
+* Practice in interpreting English statements.
+* Assignment group discussion question.
 
 ## Week 3
 
-* Assignment 1 due on Friday, time for individual questions
+* Assignment 1 due on Friday, covers workbook chapters A and B
 * ???
 
 ## Week 4

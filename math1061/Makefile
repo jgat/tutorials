@@ -1,7 +1,7 @@
-all: midsem.pdf
+all: midsem.pdf week2.pdf
 
 %.pdf: src/%.tex
 	pdflatex $<
 
 clean:
-	rm midsem.{aux,log,nav,out,snm,toc,pdf}
+	rm *.{aux,log,nav,out,snm,toc,pdf}
