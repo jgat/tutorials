@@ -2,13 +2,9 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{amssymb}
-\newcommand{\n}{\sim}
-\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
-\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\usepackage{hyperref}
 
 \title{MATH1061 Week 2 Tutorial}
-\subtitle{"Do you want to go to the maths tutorial or skip it?"
-"Yes."}
 \date{5 March 2013}
 
 \begin{document}
@@ -16,31 +12,11 @@
 \frame{\titlepage}
 
 \begin{frame}
-\frametitle{Hello!}
-
-Things you can do in tutorials:
-\pause
-\begin{itemize}
-\item One more chance to understand last week's lectures.
-\pause
-\item Get practice and tips in answering questions.
-\pause
-\item Discuss tasks with others (e.g. assignment 1 Q7).
-\pause
-\item Get individual help on assignment questions.
-\pause
-\item Get feedback on marked assignments.
-\end{itemize}
-\pause
-
-Maths First Year Tutuoring: To get individual help, go to
-Priestley-642 from 2-4pm any weekday.
-\pause
-
-Tutorial questions will come from \{Assignments,
-"Exercises" boxes in workbook, my brain\}.
-
-
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{src/purity.png}
+\end{figure}
+{\tiny Source: \url{http://xkcd.com/435/}}
 \end{frame}
 
 \begin{frame}
@@ -49,7 +25,6 @@ Tutorial questions will come from \{Assignments,
 What is the logical negation of each of these statements?
 Which is true - the original statement or its negation? (Check by seeing that
 the other one is false)
-\pause
 
 \begin{enumerate}
 \item Our tutorial is in the Priestley building, or you have to submit
@@ -59,7 +34,7 @@ local orphanage.\footnote{For this exercise, it is safe to assume that pigs
 can't fly. For Mr. Burns, it's not a safe assumption.}
 \item If there are Engineering students in the Hawken building, then there will
 be a Discrete Maths lecture on Wednesday morning.
-\item If the sky was pink, then the sky would be blue.
+\item If the sky is pink, then the sky is blue.
 \end{enumerate}
 
 \end{frame}
@@ -67,14 +42,14 @@ be a Discrete Maths lecture on Wednesday morning.
 \begin{frame}
 \frametitle{Conditionals}
 
-The following statement is true: "Jackson brings his umbrella to uni when it's
-going to rain". \pause Which of the following conclusions can we make?
+The following statement is true: ``Jackson brings his umbrella to uni when it's
+going to rain". Which of the following is also true?
 
 \begin{enumerate}
-\item To rain, it suffices that Jackson has his umbrella at uni.
-\item If it is raining, then Jackson brought his umbrella.
+\item To rain, it suffices that Jackson brings his umbrella to uni.
+\item If it is raining, then Jackson brought his umbrella to uni.
 \item If Jackson doesn't have his umbrella, then it's not raining.
-\item If it's not going to rain, Jackson didn't bring his umbrella.
+\item If it's not going to rain, Jackson won't bring his umbrella.
 \item It's necessary that Jackson has his umbrella for it to rain.
 \item A rainy forecast causes Jackson to bring his umbrella to uni.
 \end{enumerate}
