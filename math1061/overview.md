@@ -2,7 +2,7 @@
 
 ## Week 2
 
-* Workbook pages 1-17
+* Workbook pages 1-17 (Sections A.1 and A.2)
 * Intro
   * Who I am
   * What happens in tutorials and why you should come
@@ -16,8 +16,15 @@
 
 ## Week 3
 
-* Assignment 1 due on Friday, covers workbook chapters A and B
-* ???
+* Assignment 1 due on Friday, covers workbook chapters A and B. Reminder to
+  submit to the box on level 4 and to check the marks website.
+* Workbook 18-?? (A.3 to B.??)
+* Recap last week's lectures with questions:
+  * Valid and invalid arguments (find a way to make the implication false, maybe
+    get a contradiction
+  * Digital logic
+  * Basic quantifiers.
+* Individual questions on assignment
 
 ## Week 4
 
