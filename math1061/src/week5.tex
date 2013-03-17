@@ -1,0 +1,81 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\begin{document}
+
+\pagestyle{myheadings}
+\markright{MATH1061 | Week 5 Tutorial (T5)}
+
+\title{MATH1061 | Week 5 Tutorial (T5)}
+\date{26 March 2013}
+\maketitle
+
+\begin{enumerate}
+\item Prove that there is no integer which is both even and odd.
+\item Consider the statement ``$\forall n \in \mathbb{Z}, k \in \mathbb{Z}^+$,
+      if $5 \nmid n^k$, then $5 \nmid n$.''
+\begin{itemize}
+    \item[(a)] Prove this statement using a proof by contraposition.
+    \item[(b)] Prove this statement using a proof by contradiction.
+\end{itemize}
+\item For all positive integers $a, b$, prove that $a \mid b$ if and only if
+$\gcd(a, b) = a$. (Note that to prove ``X if and only if Y'', you need to prove
+both ``if X, then Y'' and ``if Y, then X'';
+because $p \leftrightarrow q \equiv (p \to q) \land (q \to p)$.)
+%\item Define $\gcd(a, b, c)$ to be the largest integer which is a common divisor
+%of $a$, $b$, and $c$. It is true that $\gcd(a, b, c) = \gcd(a, \gcd(b, c))$.
+%Use this fact to compute $\gcd(429, 273, 231)$.
+\item Find all possible values of $196x + 158y$ for integers $x$ and $y$.
+\item Find a solution to the equation $64x + 28y = 12$ where $x, y$ are
+integers. What is another solution?
+\end{enumerate}
+
+\newpage
+
+Solutions:
+
+\begin{enumerate}
+\item Proof by contradiction: suppose that there is an integer $n$ which is
+both even and odd. Then, $n = 2a = 2b + 1$ for some integers $a$ and $b$. Then,
+$a = b + \frac{1}{2}$, which is not an integer, a contradiction. So, our
+assumption is incorrect and the original claim is true.
+
+\item (a) Let $n$ be an integer and $k$ be a positive integer.
+Suppose $5 \mid n$, i.e. $n = 5x$ for some $x \in \mathbb{Z}$. Then,
+$n^k = 5^k x^k = 5(5^{k-1}x^k)$, and since $5^{k-1}x^k \in \mathbb{Z}$, $5 \mid n^k$.
+\\
+(b) Suppose there is an integer $n$ and $k$ with $5 \nmid n^k$ and $5 \mid n$.
+Then, $n = 5x$ for $x \in \mathbb{Z}$, so $n^k = 5(5^{k-1}x^k)$, and since
+$5^{k-1}x^k \in \mathbb{Z}$, $5 \mid n^k$, which contradicts the fact that
+$5 \nmid n^k$, so our assumption is incorrect, and the original claim is true.
+
+\item Let $a, b$ be positive integers. First, we prove that ``if $a \mid b$,
+then $\gcd(a, b) = a$'': Suppose $a \mid b$. Then, since $a \mid a$, $a$ is a
+common divisor of $a$ and $b$. If $c$ is a common divisor of $a$ and $b$, then
+$c \mid a$, which means that $c \leq a$, so $a$ is the greatest common divisor,
+of $a$ and $b$.
+\\
+Next, we prove that ``if $\gcd(a, b) = a$, then $a \mid b$'': Suppose that
+$\gcd(a, b) = a$. Then, $a$ is a common divisor of $a$ and $b$; in particular,
+$a \mid b$.
+
+\item Using the theorem on page 81 of the workbook, we see that all possible
+values of $196x + 158y$ are the integers $c$ such that $\gcd(196, 158) \mid c$.
+By the Euclidean algorithm,
+$\gcd(196, 158) = \gcd(158, 38) = \gcd(38, 6) = \gcd(6, 2) = \gcd(2, 0) = 2$, so
+$196x + 158y = c$ if and only if $2 \mid c$.
+So, the even integers are all the possible values of $196x + 158y$.
+
+\item By the Extended Euclidean algorithm, we find that $\gcd(64, 28) = 4$, and
+$4 = 64 \cdot -3 + 28 \cdot 7$. Multiplying by $3$, we have
+$12 = 64 \cdot -9 + 28 \cdot 7$ (*), so one solution is $(x, y) = (-9, 7)$.
+Since $0 = 64 \cdot 28 + 28 \cdot -64$, we can add this on to (*) to obtain
+$12 = 64 \cdot 19 + 28 \cdot -43$, so another solution is
+$(x, y) = (19, -43)$.
+\end{enumerate}
+
+\end{document}
