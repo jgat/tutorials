@@ -30,6 +30,39 @@ Prove or disprove the following claims:
 
 \newpage
 
+Hints:
+
+\begin{enumerate}
+\item The claim is true | Give an example.
+\\
+\item The claim is true | Substitute $d = 2$ into the Quotient-Remainder
+Theorem (p. 58 workbook); we want to show that every integer satisfies the definition of
+`even' or `odd' (p. 43 workbook).
+\\
+\item The claim is false | Find a counter-example.
+\\
+\item The claim is true | The proof will start with something like
+``Let $r, s \in \mathbb{Q}$ such that $r < s$, then $r = \frac{a}{b},
+s = \frac{c}{d}$ where $a, b, c, d$ are \dots''.
+Then use $r$ and $s$ to make a new rational number (call it $t$), and show that
+$r < t < s$ and $t$ is rational.
+\\
+\item The claim is false | Find a counter-example.
+\\
+\item The claim is false | We need to prove that for any integer $n$, that
+$n^2 \not\equiv 2$ (mod 3). We prove this by division into cases, using the
+fact that for an integer $n$, either $n \equiv 0$,
+or $n \equiv 1$, or $n \equiv 2$ (mod 3). For each of these three cases,
+work out what $n^2$ is congruent to (mod 3).
+\\
+\item The claim is true | Apply the definitions of $\floor{x}$ and $\ceil{x}$
+(p. 64 workbook), i.e. ``$\floor{x}$ is an integer $n$ such that
+\dots, and $\ceil{x}$ is an integer $m$ such that \dots. Then, \dots''.
+Don't use the same letter for $\floor{x}$ and $\ceil{x}$!
+\end{enumerate}
+
+\newpage
+
 Solutions:
 
 \begin{enumerate}
@@ -46,7 +79,8 @@ but $\sqrt{2} + (-\sqrt{2}) = 0$ is rational.
 %$0 \neq bd \in \mathbb{Z}$, so $r + s$ is rational.
 \item {\em True} | Let $r, s \in \mathbb{Q}$ such that $r < s$, then $r = \frac{a}{b},
 s = \frac{c}{d}$ for some $a, b, c, d \in \mathbb{Z}$ where $b, d \neq 0$. Then,
-let $t = \frac{r+s}{2} = \frac{ad + bc}{2bd}$. Note that $r < t < s$, and also
+let $t = \frac{r+s}{2} = \frac{ad + bc}{2bd}$. Now, since $r < s$, then 
+$\frac{r + r}{2} < \frac{r + s}{2} < \frac{s + s}{2}$, so $r < t < s$. Also,
 $ad + bc, 2bd \in \mathbb{Z}$, and $2bd \neq 0$, so $t$ is rational.
 \item {\em False} | Counter-example: $a = 2, b = 3, c = 6$. Observe that
 $2 \mid 6$ and $3 \mid 6$, but $(2 + 3) = 5 \nmid 6$.
@@ -54,6 +88,7 @@ $2 \mid 6$ and $3 \mid 6$, but $(2 + 3) = 5 \nmid 6$.
 if $n \equiv 0 \; (\text{mod } 3)$, then $n^2 \equiv 0^2 = 0 \; (\text{mod } 3)$;
 if $n \equiv 1 \; (\text{mod } 3)$, then $n^2 \equiv 1^2 = 1 \; (\text{mod } 3)$;
 if $n \equiv 2 \; (\text{mod } 3)$, then $n^2 \equiv 2^2 = 4 \equiv 1 \; (\text{mod } 3)$.
+In each of these cases, $n^2 \not\equiv 2$ (mod 3).
 \item {\em True} | Let $n = \floor{x}$ and $m = \ceil{x}$, then $n \leq x < n + 1$
 and $m-1 < x \leq m$. Therefore, $n \leq x \leq m$, so $n \leq m$. Substituting
 in the definitions of $n$ and $m$, $\floor{x} \leq \ceil{x}$.

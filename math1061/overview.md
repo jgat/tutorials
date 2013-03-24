@@ -1,5 +1,20 @@
 # Tutorial overviews
 
+## Topic overviews
+
+* Week 2: Logical statements, truth tables
+* Week 3: Valid arguments, Digital logic, Quantifiers
+* Week 4: Number Theory definitions, Direct proofs & counterproofs, Division into cases
+* Week 5: Proof by contradiction & contraposition, Euclidean algorithm
+* Week 6: Induction & Well-ordering principle
+* Week 7:
+* Week 8:
+* Week 9:
+* Week 10:
+* Week 11:
+* Week 12:
+* Week 13: Exam revision
+
 ## Week 2
 
 * [Purity](http://xkcd.com/435/)
@@ -34,6 +49,7 @@
 ## Week 4
 
 * [Three logicians walk into a bar](http://spikedmath.com/445.html)
+* Point to the maths marks page, hand out assignments
 * Assignment 1 discussion
 * Assignment 2 tips
 * Last week:
@@ -55,7 +71,8 @@
 ## Week 5
 
 * Assignment 2 due on Thursday
-* ???
+* Last week's lectures:
+  * 
 * Exercises:
   * Prove: There is no integer which is both even and odd.
 
