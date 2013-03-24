@@ -15,7 +15,7 @@ def identity(x):
     return x
 
 def print_(things1, things2):
-    "Print each of the things"
+    '''Print all the things'''
     for x, y in zip(things1, things2):
         print x, y
 
@@ -45,22 +45,3 @@ def applicator(fs):
         """ the helper function """
         for f in fs: yield f(*args, **kwargs)
     return _helper
-
-''' To correctly parse the functions below, you'll need
-    some more advanced parsing tricks which are beyond
-    the scope of this course, so you can ignore these.
-    But you might like to think about how you would
-    correctly parse them. '''
-
-def f6(a, (b, (c, d), e, f), g=0):
-    return a + b + c + d + e + f + g
-
-"""
-def f7(x):
-    """ # hello """
-
-def \
-   f8(a,
-      b, # here is a comment
-      c=4,    d={}, \
- e=None): pass
