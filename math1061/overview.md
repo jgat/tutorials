@@ -72,17 +72,26 @@
 
 * Assignment 2 due on Thursday
 * Last week's lectures:
-  * 
+  * Proof by contradiction & contraposition
+  * Euclidean algorithm
 * Exercises:
   * Prove: There is no integer which is both even and odd.
 
 ## Week 6
 
 * Assignment 2 discussion
+* Topics to cover: Chapter D:
+  * Summation and product notation
+  * Induction
+  * Strong induction
+  * Well-ordering principle
+  * Recursive sequences
+  * General recursion
 * ???
 
 ## Week 7
 
+* Midsemester exam on Saturday
 * ???
 
 ## Week 8
