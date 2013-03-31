@@ -45,7 +45,8 @@ Let $a$ be any positive number. For all integers $n \geq 0$, we have $a^n = 1$.
 \end{theorem}
 \begin{proof}
 If $n = 0$, $a^n = a^0 = 1$, so the base case holds.
-If the theorem is true for all of $1, 2, \dots, n-1, n$, then we have
+If the theorem is true for all of $0, 1, \dots, n-1, n$ (i.e. $a^0 = 1, a^1 = 1,
+\dots, a^{n-1}=1, a^n = 1$), then we have
 \[
     a^{n+1} = \frac{a^n \cdot a^n}{a^{n-1}} = \frac{1 \cdot 1}{1} = 1,
 \]
@@ -55,6 +56,8 @@ $a^n = 1$ for all integers $n \geq 0$.
 \item
 Let $d$ be a positive integer. For any integer $n \geq 0$, prove that there
 exist integers $q, r$ with $0 \leq r < d$ such that $n = dq+r$.
+
+Hint: Use the well-ordering principle in a proof by contradiction.
 
 Remark: This is a part of a familiar theorem, which is stated on p.58 of the
 workbook.
@@ -73,7 +76,10 @@ Show: (a) that $((0.1+(3.2-0))+(-0.2-\pi))$ is an arithmetic expression, and
 
 \newpage
 
-{\bf Challenge exercises:}
+{\bf Challenge\footnote{i.e., if you can do any of these questions,
+then you're going {\em way} above the course expectations. But hey, maybe you
+like this stuff, or maybe you want to see some applications to computer science.}
+exercises:}
 
 \begin{enumerate}
 \item[C1.] Show that
@@ -84,14 +90,17 @@ Compare this equation to Exercise 1 above, and Example D.2.4 (p.96 of
 workbook), and suggest a generalisation. Prove this generalisation is true.
 Use this to factorise the polynomial $x^n - 1$.
 \item[C2.] Prove that the sum of the cubes of the first $n$ positive integers is
-equal to the square of the sum of the first $n$ positive integers.
-%for all integers $n \geq 1$,
-%\[ 1^3 + 2^3 + 3^3 + \dots + n^3 = (1 + 2 + \dots + n)^2. \]
+equal to the square of the sum of the first $n$ positive integers. That is,
+for all integers $n \geq 1$, prove that
+\[ 1^3 + 2^3 + 3^3 + \dots + n^3 = (1 + 2 + \dots + n)^2. \]
 \item[C3.]
 The following algorithm takes a non-negative integer $n$ as a parameter. Prove
-that the algorithm returns the value of $n^2$.
-\begin{algorithmic}
+that the algorithm returns the value of $n^2$. (Related reading: Epp, 4th ed.
+\S 5.5)
+\begin{algorithmic}[1]
 \Function{square}{$n$}
+    \Require $n \in \mathbb{Z}$, $n \geq 0$.
+    \Ensure Return value is $n^2$.
     %\If{$n = 0$}
     %    \State \Return 0
     %\ElsIf{$n > 0$}
@@ -100,9 +109,9 @@ that the algorithm returns the value of $n^2$.
     %    \State \Return {\footnotesize SQUARE}($-n$)
     %\EndIf
     \State $m \gets 0$
-    \State $k \gets 1$
-    \While{$k \leq n$}
-        \State $m \gets m + 2k - 1$
+    \State $k \gets 0$
+    \While{$k < n$}
+        \State $m \gets m + 2k + 1$
         \State $k \gets k + 1$
     \EndWhile
     \State \Return $m$
@@ -112,8 +121,8 @@ that the algorithm returns the value of $n^2$.
 Prove the result in Exercise 5 holds also holds for negative $n$.
 (Hint: if $n$ is a negative integer, then $-n$ is a positive integer, and we've
 already proved it for the positive integers.)
-Why couldn't we use the well-ordering principle to prove it for all integers
-$n$, instead of just the non-negative ones?
+Why couldn't we easily use the well-ordering principle to prove it for all
+integers $n$, instead of just the non-negative ones?
 %\begin{proof}
 %Let $n$ be a negative integer and $d$ be a positive integer. Then $-n \geq 0$,
 %so there are integers $q, r$ such that $-n = dq + r$ and $0 \leq r < d$.
@@ -135,7 +144,7 @@ interested in this sort of thing, consider taking COMP3506 in the future.}
 
 \newpage
 
-Hints:
+{\bf Hints:}
 \begin{enumerate}
 \item
 Here's a pattern in the first few elements:
@@ -200,5 +209,7 @@ following would have to be true:
 %to use for $n$, make sure that $0 \leq r' < d$.
 %\item[C5.]
 \end{enumerate}
+
+No hints for the challenge tasks, otherwise they wouldn't be challenges.
 
 \end{document}
