@@ -15,6 +15,8 @@
 %\date{9 April 2013}
 %\maketitle
 
+Related reading: Workbook chapters D.1 through D.6.
+
 {\bf Exercises:}
 
 \begin{enumerate}
@@ -33,9 +35,9 @@ The {\em Fibonacci sequence} is the sequence $\{F_n\}$ defined by
 \[
     F_0 = 0; \quad F_1 = 1; \quad \forall n \geq 2,\; F_n = F_{n-1} + F_{n-2}.
 \]
-Let $\phi = \frac{1 + \sqrt{5}}{2}$. It can be shown that $1 < \phi < 2$
-and that $\phi^2 = \phi + 1$. Use these facts to
-prove that $F_n < \phi^n$ for all $n \geq 0$.
+Let $\phi = \frac{1 + \sqrt{5}}{2}$. It can be shown that $\phi \approx 1.618$
+and that $\phi^2 = \phi + 1$. Use these facts to prove that $F_n < \phi^n$ for
+all $n \geq 0$.
 \item
 \footnote{This question is from Donald Knuth's The Art of Computer
 Programming (3rd ed.), \S 1.2.1, Q.2}
@@ -54,46 +56,56 @@ so the theorem is true for $n+1$ as well. By the principle of strong induction,
 $a^n = 1$ for all integers $n \geq 0$.
 \end{proof}
 \item
-Let $d$ be a positive integer. For any integer $n \geq 0$, prove that there
-exist integers $q, r$ with $0 \leq r < d$ such that $n = dq+r$.
-
-Hint: Use the well-ordering principle in a proof by contradiction.
-
-Remark: This is a part of a familiar theorem, which is stated on p.58 of the
-workbook.
-\item
-We can define a set of arithmetic expressions over the real numbers as follows:
-\begin{itemize}
-\item[I.] BASE: Each real number $r$ is an arithmetic expression.
-\item[II.] RECURSION: If $u$ and $v$ are arithmetic expressions, then $(u+v)$
-and $(u-v)$ are arithmetic expressions.
-\item[III.] RESTRICTION: There are no arithmetic expressions over the real
-numbers other than those obtained from I and II.
-\end{itemize}
-Show: (a) that $((0.1+(3.2-0))+(-0.2-\pi))$ is an arithmetic expression, and
-(b) that $(2 + (1.414 - 12.1) + 13.2)$ is not an arithmetic expression.
+Define a sequence $\{a_n\}$ as follows: $a_1 = 5$, and for $n \geq 1$, $a_n =
+a_{n-1} + 2n + 1$.
+Guess a closed form (i.e. not recursive) expression for $a_n$. Use induction to
+prove the guess is correct.
 \end{enumerate}
 
-\newpage
-
-{\bf Challenge\footnote{i.e., if you can do any of these questions,
-then you're going {\em way} above the course expectations. But hey, maybe you
-like this stuff, or maybe you want to see some applications to computer science.}
-exercises:}
+{\bf Additional exercises:}
 
 \begin{enumerate}
-\item[C1.] Show that
+\item[6.] Show that
 \[
     \sum_{k=1}^n 3 \cdot 4^{k-1} = 4^n - 1.
 \]
 Compare this equation to Exercise 1 above, and Example D.2.4 (p.96 of
 workbook), and suggest a generalisation. Prove this generalisation is true.
 Use this to factorise the polynomial $x^n - 1$.
-\item[C2.] Prove that the sum of the cubes of the first $n$ positive integers is
+\item[7.] Prove that the sum of the cubes of the first $n$ positive integers is
 equal to the square of the sum of the first $n$ positive integers. That is,
 for all integers $n \geq 1$, prove that
 \[ 1^3 + 2^3 + 3^3 + \dots + n^3 = (1 + 2 + \dots + n)^2. \]
-\item[C3.]
+(Hint: Use the result from Example D.2.1)
+\end{enumerate}
+
+%{\bf Hints:}
+%\begin{enumerate}
+%\item
+%Here's a pattern in the first few elements:
+%$2 = 2 \cdot 3^0$, $6 = 2 \cdot 3^1$, $18 = 2 \cdot 3^2$, $54 = 2 \cdot 3^3$.
+%Use an induction proof, and remember that $3^n + 2 \cdot 3^n = 3^{n+1}$.
+%\item
+%Check what $n!$ and $2^n$ are for small integers $n$. Use a proof by induction
+%to show that it's true for all $n$ above a certain point.
+%\item
+%Use strong induction, and remember that
+%$\phi^n + \phi^{n-1} = \phi^{n-1} (\phi + 1)$.
+%\item
+%What values of $n$ does the inductive step work on?
+%\item
+%Find the value of $a_2$, $a_3$, and $a_4$.
+%\end{enumerate}
+
+\newpage
+
+{\bf Challenge exercises:}
+(i.e., if you can do any of these questions, then you're going {\em way} above
+the course expectations. But hey, maybe you like this stuff, or maybe you want
+to see some applications to computer science.)
+
+\begin{enumerate}
+\item[C1.]
 The following algorithm takes a non-negative integer $n$ as a parameter. Prove
 that the algorithm returns the value of $n^2$. (Related reading: Epp, 4th ed.
 \S 5.5)
@@ -117,8 +129,16 @@ that the algorithm returns the value of $n^2$. (Related reading: Epp, 4th ed.
     \State \Return $m$
 \EndFunction
 \end{algorithmic}
-\item[C4.]
-Prove the result in Exercise 5 holds also holds for negative $n$.
+\item[C2.]
+Let $d$ be a positive integer. For any integer $n \geq 0$, prove that there
+exist integers $q, r$ with $0 \leq r < d$ such that $n = dq+r$.
+
+Hint: Use the well-ordering principle in a proof by contradiction.
+
+Remark: This is a part of a familiar theorem, which is stated on p.58 of the
+workbook.
+\item[C3.]
+Prove the result in Exercise C2 also holds for negative $n$.
 (Hint: if $n$ is a negative integer, then $-n$ is a positive integer, and we've
 already proved it for the positive integers.)
 Why couldn't we easily use the well-ordering principle to prove it for all
@@ -131,49 +151,44 @@ integers $n$, instead of just the non-negative ones?
 %Otherwise, $r > 0$, and let $q'=-q-1$ and $r'=d-r$. Then, $q'$ and $r'$ are
 %integers such that $n = dq' + r'$ and $0 \leq r' < d$.
 %\end{proof}
-There's one more part of the Quotient-Remainder Theorem we haven't yet proved,
+There's one more part of the theorem on p.58 we haven't yet proved,
 what is it? Can you prove it?
-\item[C5.]
+\item[C4.] (Related reading: Workbook D.7)
+We can define a set of arithmetic expressions over the real numbers as follows:
+\begin{itemize}
+\item[I.] BASE: Each real number $r$ is an arithmetic expression.
+\item[II.] RECURSION: If $u$ and $v$ are arithmetic expressions, then $(u+v)$
+and $(u-v)$ are arithmetic expressions.
+\item[III.] RESTRICTION: There are no arithmetic expressions over the real
+numbers other than those obtained from I and II.
+\end{itemize}
+%Show: (a) that $((0.1+(3.2-0))+(-0.2-\pi))$ is an arithmetic expression, and
+%(b) that $(2 + (1.414 - 12.1) + 13.2)$ is not an arithmetic expression.
 Design and implement a computer program which takes as input an arithmetic
-expression as defined in Exercise 6, and computes the result of applying the
+expression as defined above, and computes the result of applying the
 additions and subtractions. Extend your program to also detect for erroneous
 input (i.e. input which is not an arithmetic expression).\footnote{If you're
 interested in this sort of thing, consider taking COMP3506 in the future.}
 \end{enumerate}
 
 
-\newpage
+%\newpage
+%\item
+%Use the well-ordering principle in a proof by contradiction.
+%Let $S$ be the set of all non-negative integers $n$ for which we {\em cannot}
+%write $n = dq+r$ for any suitable $q, r$. Then find a contradiction
+%involving the smallest element of $S$.
+%\item
+%(a) Show that ``3.2'', ``0'', and ``(3.2 - 0)'' are arithmetic expressions, and so on.
 
-{\bf Hints:}
-\begin{enumerate}
-\item
-Here's a pattern in the first few elements:
-$2 = 2 \cdot 3^0$, $6 = 2 \cdot 3^1$, $18 = 2 \cdot 3^2$, $54 = 2 \cdot 3^3$.
-Use an induction proof, and remember that $3^n + 2 \cdot 3^n = 3^{n+1}$.
-\item
-Check what $n!$ and $2^n$ are for small integers $n$. Use a proof by induction
-to show that it's true for all $n$ above a certain point.
-\item
-Use strong induction, and remember that
-$\phi^n + \phi^{n-1} = \phi^{n-1} (\phi + 1)$.
-\item
-What values of $n$ does the inductive step work on?
-\item
-Use the well-ordering principle in a proof by contradiction.
-Let $S$ be the set of all non-negative integers $n$ for which we {\em cannot}
-write $n = dq+r$ for any suitable $q, r$. Then find a contradiction
-involving the smallest element of $S$.
-\item
-(a) Show that ``3.2'', ``0'', and ``(3.2 - 0)'' are arithmetic expressions, and so on.
-
-(b) If it were an arithmetic expression, explain why at least one of the
-following would have to be true:
-\begin{itemize}
-\item The whole expression is a real number.
-\item ``$2+(1.414-12.1)$'' and ``$13.2$'' are both arithmetic expressions.
-\item ``$2$'' and ``$(1.414-12.1)+13.2$'' are both arithmetic expressions.
-\item ``$2+(1.414$'' and ``$12.1)+13.2$'' are both arithmetic expressions.
-\end{itemize}
+%(b) If it were an arithmetic expression, explain why at least one of the
+%following would have to be true:
+%\begin{itemize}
+%\item The whole expression is a real number.
+%\item ``$2+(1.414-12.1)$'' and ``$13.2$'' are both arithmetic expressions.
+%\item ``$2$'' and ``$(1.414-12.1)+13.2$'' are both arithmetic expressions.
+%\item ``$2+(1.414$'' and ``$12.1)+13.2$'' are both arithmetic expressions.
+%\end{itemize}
 %\item[C1.]
 %If you can't think of a generalisation, observe that the following are also true:
 %\[
@@ -208,8 +223,7 @@ following would have to be true:
 %representation as $-n=dq+r$ for some $q,r$. When you pick a `new' $q'$ and $r'$
 %to use for $n$, make sure that $0 \leq r' < d$.
 %\item[C5.]
-\end{enumerate}
 
-No hints for the challenge tasks, otherwise they wouldn't be challenges.
+%No hints for the challenge tasks, otherwise they wouldn't be challenges.
 
 \end{document}
