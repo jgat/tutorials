@@ -92,17 +92,23 @@
 ## Week 7
 
 * Midsemester exam on Saturday
-* ???
+* Practice midsemester exam
 
 ## Week 8
 
 * Assignment 3 due on Friday
-* ???
+* Chapter E: sets
+  * True/False questions about set membership/subsets
+  * Power set, direct product
+  * Proving/disproving set equalities
 
 ## Week 9
 
-* Assignment 3 discussion
-* ???
+* Assignment 3 discussion 
+* Chapter F: Graphs
+  * Graphs with loops, isolated vertices, parallel edges, simple graphs
+  * Digraphs
+  * K\_n, K\_{mn}
 
 ## Week 10
 
