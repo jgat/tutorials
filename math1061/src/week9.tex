@@ -22,38 +22,87 @@ explain why.
     \item A graph on 4 vertices with vertices of degree 1, 2, 3, 3.
     \item A graph on 5 vertices with vertices of degree 1, 2, 3, 3, 5.
     \item A simple graph on 6 vertices, all with degree 3.
-    \item A tree on 5 vertices with no leaves.
+    \item A tree on 7 vertices with no leaves.
+    \item A tree on 5 vertices which contains a Hamiltonian path.
     \item A connected graph with 8 vertices and 6 edges.
-    \item A connected graph with 10 vertices, 9 edges, and at least one cycle.
+    %\item A graph with the following incidence matrix:
+    %\[
+    %    J = \begin{pmatrix}
+    %        1 & 0 & 0 & 0 & 0 & 1 \\
+    %        0 & 0 & 1 & 0 & 1 & 0 \\
+    %        0 & 2 & 0 & 0 & 0 & 0 \\
+    %        0 & 0 & 1 & 1 & 0 & 1 \\
+    %        1 & 0 & 0 & 0 & 1 & 0 \\
+    %    \end{pmatrix}
+    %\]
     \end{enumerate}
 \item
-A group of 4 men and 3 women play a tennis tournament in the following way: two
-people (call them $A$ and $B$) play a match, then $B$ plays with someone
-else who is not $A$ (call them $C$), then $C$ plays with someone who is
-not $B$, then that person plays with someone who is not $C$, and so on.
-    \begin{enumerate}
-    \item The group would like to play in a way that everyone plays against
-       everyone else exactly once. Is it possible to do this?
-    \item The group would like to play in a way that all the men play against each
-       woman exactly once, all the women play against each man exactly once,
-       and no two people of the same gender play against each other. Is it
-       possible to do this?
-    \item The group would like to play in a way that everyone plays exactly twice,
-       and they only play with someone of the opposite gender. Is it possible to
-       do this?
-    \item Suppose now there are $n$ men and $m$ women (where $n$ and
-    $m$ are positive integers). For each of the three situations above, what are
-    all the values of $n$ and $m$ which make the arrangement possible?
-    \end{enumerate}
+The complete bipartite graph $K_{1,n}$ is a special type of tree, called a
+{\em star}. Draw the star $K_{1,5}$, and write its adjacency matrix and
+incidence matrix. Describe the adjacency matrix of $K_{1,n}$.
 \item
-Challenge: Let $G$ be a graph and let $A$ be its adjacency matrix.
-Make a conjecture about how the entry in row $i$ column $j$ of $A^2$
-relates to the vertices $v_i$ and $v_j$ of the graph. What about the entries of
-the matrix $A^n$?
+Recall from lectures that a connected graph has an Euler circuit if and
+only if every vertex of has even degree, and that it has an Euler path from
+$v$ to $w$ if and only if $v$ and $w$ have odd degree and all other vertices
+have even degree.
 
-(Remark: Computers are efficient at doing matrix calculations, so if we want
-to write a computer program that stores and analyses graphs, we can store the
-adjacency matrix of the graph in the computer).
+In a directed graph, the {\em out degree} of a vertex $v$ (denoted $\deg^+(v)$)
+is the number of arcs going out of $v$, and the {\em in degree} of $v$
+(denoted $\deg^-(v)$) is the number of arcs going into $v$.
+
+Let $G$ be a directed, connected graph (i.e. there is a path from each vertex
+to every other vertex that follows the directions of the edges). Make a
+statement about when $G$ has an Euler circuit. Make another statement about
+when $G$ has an Euler path from $v$ to $w$.
+\item
+Can the following figures be drawn in a single pen stroke? Explain why/why not.
+If not, what's the minimum number of pen lifts required?
+\begin{center}
+\setlength{\unitlength}{3.5cm}
+\begin{picture}(3,1)
+\put(0,0){\line(1,0){1}}
+\put(0,0.6){\line(1,0){1}}
+\put(0,0){\line(0,1){0.6}}
+\put(1,0){\line(0,1){0.6}}
+\put(0,0){\line(5,3){1}}
+\put(1,0){\line(-5,3){1}}
+\put(0,0.6){\line(3,2){0.5}}
+\put(1,0.6){\line(-3,2){0.5}}
+\put(1,0){\line(1,1){0.3}}
+\put(1,0.6){\line(1,-1){0.3}}
+%\put(0.5,0){\line(5,3){0.5}}
+%\put(0,0.3){\line(5,3){0.5}}
+%\put(0.5,0){\line(-5,3){0.5}}
+%\put(1,0.3){\line(-5,3){0.5}}
+
+\put(2.25,0){\line(1,0){0.5}}
+\put(2.125,0.25){\line(1,2){0.25}}
+\put(2.875,0.25){\line(-1,2){0.25}}
+\put(2.5,0){\line(1,2){0.25}}
+\put(2.5,0){\line(-1,2){0.25}}
+\put(2.25,0.5){\line(1,0){0.5}}
+\put(2.375,0.75){\line(1,0){0.25}}
+\put(2.25,0){\line(1,2){0.375}}
+\put(2.25,0){\line(-1,2){0.125}}
+\put(2.75,0){\line(-1,2){0.375}}
+\put(2.75,0){\line(1,2){0.125}}
+\put(2.125,0.25){\line(1,0){0.75}}
+\end{picture}
+\end{center}
+
+%\item
+%{\em Challenge Question}:
+%One way to represent and store a graph in a computer program is to
+%store the adjacency matrix of the graph. (If you're doing MATH1051, you will be
+%familiar with writing computer programs in MATLAB that use matrices.)
+%
+%Fact: If $A$ is the adjacency matrix of a graph $G$, the $(i, j)$ entry in the
+%matrix $A^k$ is the number of walks of length $k$ from $v_i$ to $v_j$.
+%
+%Task: If a computer has the adjacency matrix $A$ of a graph, use the above fact
+%to design a process that the computer can use to find the length of the
+%shortest path from $v_i$ to $v_j$.
+
 \end{enumerate}
 
 \newpage
@@ -69,33 +118,56 @@ adjacency matrix of the graph in the computer).
     \item Possible: vertex set $\{1, 2, 3, 4, 5, 6\}$ and edge set
     $\{12, 23, 34, 45, 56, 61, 14, 26, 35\}$.
     \item Not possible: Each vertex would have degree at least 2, for a total
-    degree of at least 10, but a tree on 5 vertices needs to have total degree
-    8.
+    degree of at least 14, but a tree on 7 vertices needs to have total degree
+    12.
+    \item Possible: A line, with edge set $\{12, 23, 34, 45\}$.
     \item Not possible: Using 6 edges, we can only connect at most 7 vertices.
-    \item Not possible: Using 9 edges and 10 vertices, we can only construct a
-    tree, but no cycles. We could construct a cycle of length $n$ and a tree
-    of order $10-n$, but they would not be connected.
+%    \item Not possible: The 4th edge (4th column of the matrix) only has one
+%    endpoint.
     \end{enumerate}
 \item
-    \begin{enumerate}
-    \item Possible: The problem reduces to finding an Euler path or Euler
-    circuit of $K_7$. Each vertex in $K_7$ has degree 6, so they're all even.
-    \item Not possible: The problem reduces to finding an Euler path or Euler
-    circuit of $K_{4,3}$. The vertices in the order-4 partite set have degree 3.
-    \item Not possible: The problem reduces to finding a Hamiltonian circuit of
-    $K_{4,3}$, and we can check that $K_{4,3}$ has no Hamiltonian circuit.
-    \item
-    a. is possible iff $n+m$ is odd.
-
-    b. is possible iff $n$ and $m$ are both even (which gives an Eulerian
-        circuit), or $m = 2$ and $n$ is odd, or $n = 2$ and $m$ is odd (which
-        gives an Eulerian path).
-
-    c. is possible iff $n = m$.
-    \end{enumerate}
+    (TODO Picture)
+    Adjacency matrix $A$ and incidence matrix $J$ below:
+    \[
+    A = \begin{pmatrix}
+        0 & 1 & 1 & 1 & 1 & 1 \\
+        1 & 0 & 0 & 0 & 0 & 0 \\
+        1 & 0 & 0 & 0 & 0 & 0 \\
+        1 & 0 & 0 & 0 & 0 & 0 \\
+        1 & 0 & 0 & 0 & 0 & 0 \\
+        1 & 0 & 0 & 0 & 0 & 0
+    \end{pmatrix}
+    \quad
+    J = \begin{pmatrix}
+        1 & 1 & 1 & 1 & 1 \\
+        1 & 0 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 0 & 1 \\
+    \end{pmatrix}
+    \]
 \item
-The entry in row $i$ column $j$ of the matrix $A^n$ represents the number of
-walks of length $n$ from $v_i$ to $v_j$.
+    Suppose $G$ is adirected connected graph.
+    $G$ has an Eulerian cycle if and only if every vertex $u$ has
+    $\deg^+(u) = \deg^-(u)$.
+
+    $G$ has an Eulerian path from $v$ to $w$ if and
+    only if vertex $\deg^+(v) = \deg^-(v) + 1$, $\deg^-(w) = \deg^+(w)+1$,
+    and every other vertex $u$ has $\deg^+(u) = \deg^-(v)$.
+\item
+    Note that a figure can be drawn in one pen stroke if and only if a graph
+    with that drawing, and vertices where lines meet, has an Eulerian
+    cycle/path.
+
+    The first figure has two `vertices' of odd degree (the bottom-left
+    has degree 3, and the top-right of the rectangle has degree 5), so there
+    is an Eulerian path, so it is possible. Such a drawing would have to start
+    at one of those two corners, and finish at the other.
+
+    The second figure has six `vertices' of odd degree (the six `corners' all
+    have degree 3), so there is no Eulerian path or cycle, so it is not
+    possible.
 \end{enumerate}
 
 \end{document}
