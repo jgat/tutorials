@@ -1,0 +1,101 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[lmargin=2.5cm,rmargin=2.5cm,tmargin=2cm,bmargin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}
+\begin{document}
+
+\pagestyle{myheadings}
+\markright{MATH1061 | Week 9 Tutorial (T5)}
+
+\title{MATH1061 | Week 9 Tutorial (T5)}
+\date{30 April 2013}
+\maketitle
+
+\begin{enumerate}
+\item
+Do graphs with the following descriptions exist? If so, draw one, if not,
+explain why.
+    \begin{enumerate}
+    \item A graph on 4 vertices with vertices of degree 1, 2, 3, 3.
+    \item A graph on 5 vertices with vertices of degree 1, 2, 3, 3, 5.
+    \item A simple graph on 6 vertices, all with degree 3.
+    \item A tree on 5 vertices with no leaves.
+    \item A connected graph with 8 vertices and 6 edges.
+    \item A connected graph with 10 vertices, 9 edges, and at least one cycle.
+    \end{enumerate}
+\item
+A group of 4 men and 3 women play a tennis tournament in the following way: two
+people (call them $A$ and $B$) play a match, then $B$ plays with someone
+else who is not $A$ (call them $C$), then $C$ plays with someone who is
+not $B$, then that person plays with someone who is not $C$, and so on.
+    \begin{enumerate}
+    \item The group would like to play in a way that everyone plays against
+       everyone else exactly once. Is it possible to do this?
+    \item The group would like to play in a way that all the men play against each
+       woman exactly once, all the women play against each man exactly once,
+       and no two people of the same gender play against each other. Is it
+       possible to do this?
+    \item The group would like to play in a way that everyone plays exactly twice,
+       and they only play with someone of the opposite gender. Is it possible to
+       do this?
+    \item Suppose now there are $n$ men and $m$ women (where $n$ and
+    $m$ are positive integers). For each of the three situations above, what are
+    all the values of $n$ and $m$ which make the arrangement possible?
+    \end{enumerate}
+\item
+Challenge: Let $G$ be a graph and let $A$ be its adjacency matrix.
+Make a conjecture about how the entry in row $i$ column $j$ of $A^2$
+relates to the vertices $v_i$ and $v_j$ of the graph. What about the entries of
+the matrix $A^n$?
+
+(Remark: Computers are efficient at doing matrix calculations, so if we want
+to write a computer program that stores and analyses graphs, we can store the
+adjacency matrix of the graph in the computer).
+\end{enumerate}
+
+\newpage
+
+{\bf Solutions:}
+
+\begin{enumerate}
+\item
+    \begin{enumerate}
+    \item Not possible: total degree is 9, which is odd.
+    \item Possible, but not with simple graphs: An example would be to have
+    a vertex of degree 5 with a loop, and a vertex of degree 3 with a loop.
+    \item Possible: vertex set $\{1, 2, 3, 4, 5, 6\}$ and edge set
+    $\{12, 23, 34, 45, 56, 61, 14, 26, 35\}$.
+    \item Not possible: Each vertex would have degree at least 2, for a total
+    degree of at least 10, but a tree on 5 vertices needs to have total degree
+    8.
+    \item Not possible: Using 6 edges, we can only connect at most 7 vertices.
+    \item Not possible: Using 9 edges and 10 vertices, we can only construct a
+    tree, but no cycles. We could construct a cycle of length $n$ and a tree
+    of order $10-n$, but they would not be connected.
+    \end{enumerate}
+\item
+    \begin{enumerate}
+    \item Possible: The problem reduces to finding an Euler path or Euler
+    circuit of $K_7$. Each vertex in $K_7$ has degree 6, so they're all even.
+    \item Not possible: The problem reduces to finding an Euler path or Euler
+    circuit of $K_{4,3}$. The vertices in the order-4 partite set have degree 3.
+    \item Not possible: The problem reduces to finding a Hamiltonian circuit of
+    $K_{4,3}$, and we can check that $K_{4,3}$ has no Hamiltonian circuit.
+    \item
+    a. is possible iff $n+m$ is odd.
+
+    b. is possible iff $n$ and $m$ are both even (which gives an Eulerian
+        circuit), or $m = 2$ and $n$ is odd, or $n = 2$ and $m$ is odd (which
+        gives an Eulerian path).
+
+    c. is possible iff $n = m$.
+    \end{enumerate}
+\item
+The entry in row $i$ column $j$ of the matrix $A^n$ represents the number of
+walks of length $n$ from $v_i$ to $v_j$.
+\end{enumerate}
+
+\end{document}

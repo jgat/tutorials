@@ -106,19 +106,52 @@
 
 * Assignment 3 discussion 
 * Chapter F: Graphs
-  * Graphs with loops, isolated vertices, parallel edges, simple graphs
-  * Digraphs
-  * K\_n, K\_{mn}
+  * Graphs with loops, isolated vertices, parallel edges, simple graphs,
+    digraphs, K\_n, bipartite graphs, K\_{mn}, subgraph, degree, total degree
+  * Using the "total degree must be even" rule to eliminate degree sequences
+  * Walks, trails, paths, closed walk, circuit, cycle, connectedness
+  * Euler circuit, Euler path, Hamiltonian circuit
+  * Adjacency matrix, incidence matrix
+  * Trees
+* Exercise outlines:
+  * Does a given degree sequence exist for graphs / simple graphs?
+  * Does a graph / tree / connected graph exist with given vertex and edge counts?
+  * Draw a graph with an Euler circuit and no Hamiltonian circuit
+  * Draw a graph with a Hamiltonian circuit and no Euler circuit
+* Exercises:
+  1. Do the following graphs exist? (If so, give an example, if not, explain why)
+     * A graph on 4 vertices with vertices of degree 1, 2, 3, 3.
+     * A graph on 5 vertices with vertices of degree 1, 2, 3, 3, 5.
+     * A simple graph on 6 vertices, all with degree 3.
+     * A tree on 5 vertices with no leaves.
+     * A connected graph with 8 vertices and 6 edges.
+     * A connected graph with 10 vertices, 9 edges, and at least one cycle.
+  2. A group of 4 men and 3 woman play a tennis tournament in the following way: two
+     people (call them `A` and `B`) play a match, then `B` plays with someone
+     else who is not `A` (call them `C`), then `C` plays with someone who is
+     not `B`, then that person plays with someone who is not `C`, and so on.
+     * The group would like to play in a way that everyone plays against
+       everyone else exactly once. Is it possible to do this?
+     * The group would like to play in a way that all the men play against each
+       woman exactly once, and no two people of the same gender play against
+       each other. Is it possible to do this?
+     * The group would like to play in a way that everyone plays exactly twice,
+       and they only play with someone of the opposite gender. Is it possible to
+       do this?
 
 ## Week 10
 
 * Assignment 4 due on Friday
-* ???
+* Chapter G: Relations
+  * Reflexifity, Symmetry, Transitivity
+  * Equivalence relations, equivalence classes, partitions
+  * Antisymmetry, Partial orders, Total orders.
+  * Graphical representation
 
 ## Week 11
 
 * Assignment 4 discussion
-* ???
+* Chapter H: Functions
 
 ## Week 12
 
