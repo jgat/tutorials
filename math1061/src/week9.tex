@@ -2,9 +2,7 @@
 \usepackage[lmargin=2.5cm,rmargin=2.5cm,tmargin=2cm,bmargin=2cm]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{amsthm}
 
-\newtheorem{theorem}{Theorem}
 \begin{document}
 
 \pagestyle{myheadings}
@@ -16,7 +14,7 @@
 
 \begin{enumerate}
 \item
-Do graphs with the following descriptions exist? If so, draw one, if not,
+Do the following graphs exist? If so, draw one, if not,
 explain why.
     \begin{enumerate}
     \item A graph on 4 vertices with vertices of degree 1, 2, 3, 3.
@@ -38,27 +36,34 @@ explain why.
     \end{enumerate}
 \item
 The complete bipartite graph $K_{1,n}$ is a special type of tree, called a
-{\em star}. Draw the star $K_{1,5}$, and write its adjacency matrix and
-incidence matrix. Describe the adjacency matrix of $K_{1,n}$.
+{\em star}. Draw the star $K_{1,5}$, and write its adjacency matrix $A$ and
+incidence matrix $J$.
 \item
-Recall from lectures that a connected graph has an Euler circuit if and
-only if every vertex of has even degree, and that it has an Euler path from
-$v$ to $w$ if and only if $v$ and $w$ have odd degree and all other vertices
-have even degree.
+In lectures we proved theorems about when an undirected graph has an Euler
+circuit or an Euler path (see workbook p.162).
+When does a {\bf directed} graph have an Euler circuit or Euler path? (Note that
+a path in a directed graph must follow the directions of the arrows.) You may
+use the following definitions in your answer:
+
+%Recall from lectures that a connected graph has an Euler circuit if and
+%only if every vertex of has even degree, and that it has an Euler path from
+%$v$ to $w$ if and only if $v$ and $w$ have odd degree and all other vertices
+%have even degree.
+
+%Let $G$ be a directed, connected graph (i.e. there is a path from each vertex
+%to every other vertex that follows the directions of the edges). When does $G$
+%have an Euler circuit? When does $G$ have an Euler path from $v$ to $w$?
+%Make use of the following definitions:
 
 In a directed graph, the {\em out degree} of a vertex $v$ (denoted $\deg^+(v)$)
 is the number of arcs going out of $v$, and the {\em in degree} of $v$
 (denoted $\deg^-(v)$) is the number of arcs going into $v$.
-
-Let $G$ be a directed, connected graph (i.e. there is a path from each vertex
-to every other vertex that follows the directions of the edges). Make a
-statement about when $G$ has an Euler circuit. Make another statement about
-when $G$ has an Euler path from $v$ to $w$.
 \item
-Can the following figures be drawn in a single pen stroke? Explain why/why not.
+Can the following figures be drawn in a single pen stroke? Explain why/why not,
+without trying to draw the figures.
 If not, what's the minimum number of pen lifts required?
 \begin{center}
-\setlength{\unitlength}{3.5cm}
+\setlength{\unitlength}{4cm}
 \begin{picture}(3,1)
 \put(0,0){\line(1,0){1}}
 \put(0,0.6){\line(1,0){1}}
@@ -75,18 +80,18 @@ If not, what's the minimum number of pen lifts required?
 %\put(0.5,0){\line(-5,3){0.5}}
 %\put(1,0.3){\line(-5,3){0.5}}
 
-\put(2.25,0){\line(1,0){0.5}}
-\put(2.125,0.25){\line(1,2){0.25}}
-\put(2.875,0.25){\line(-1,2){0.25}}
-\put(2.5,0){\line(1,2){0.25}}
-\put(2.5,0){\line(-1,2){0.25}}
-\put(2.25,0.5){\line(1,0){0.5}}
-\put(2.375,0.75){\line(1,0){0.25}}
-\put(2.25,0){\line(1,2){0.375}}
-\put(2.25,0){\line(-1,2){0.125}}
-\put(2.75,0){\line(-1,2){0.375}}
-\put(2.75,0){\line(1,2){0.125}}
-\put(2.125,0.25){\line(1,0){0.75}}
+\put(2.125,0){\line(1,0){0.5}}
+\put(2,0.25){\line(1,2){0.25}}
+\put(2.75,0.25){\line(-1,2){0.25}}
+\put(2.375,0){\line(1,2){0.25}}
+\put(2.375,0){\line(-1,2){0.25}}
+\put(2.125,0.5){\line(1,0){0.5}}
+\put(2.25,0.75){\line(1,0){0.25}}
+\put(2.125,0){\line(1,2){0.375}}
+\put(2.125,0){\line(-1,2){0.125}}
+\put(2.625,0){\line(-1,2){0.375}}
+\put(2.625,0){\line(1,2){0.125}}
+\put(2,0.25){\line(1,0){0.75}}
 \end{picture}
 \end{center}
 
@@ -115,18 +120,20 @@ If not, what's the minimum number of pen lifts required?
     \item Not possible: total degree is 9, which is odd.
     \item Possible, but not with simple graphs: An example would be to have
     a vertex of degree 5 with a loop, and a vertex of degree 3 with a loop.
-    \item Possible: vertex set $\{1, 2, 3, 4, 5, 6\}$ and edge set
-    $\{12, 23, 34, 45, 56, 61, 14, 26, 35\}$.
+    \item Possible: vertex set $\{a, b, c, d, e, f\}$ and edge set
+    $\{ab, bc, cd, de, ef, fa, ad, bf, ce\}$.
     \item Not possible: Each vertex would have degree at least 2, for a total
     degree of at least 14, but a tree on 7 vertices needs to have total degree
     12.
-    \item Possible: A line, with edge set $\{12, 23, 34, 45\}$.
+    \item Possible: A line, with vertex set $\{a,b,c,d,e\}$ and edge set
+    $\{ab, bc, cd, de\}$. The Hamiltonian path follows the vertices in the order
+    $a, b, c, d, e$.
     \item Not possible: Using 6 edges, we can only connect at most 7 vertices.
 %    \item Not possible: The 4th edge (4th column of the matrix) only has one
 %    endpoint.
     \end{enumerate}
 \item
-    (TODO Picture)
+    (Picture not shown)
     Adjacency matrix $A$ and incidence matrix $J$ below:
     \[
     A = \begin{pmatrix}
@@ -148,7 +155,7 @@ If not, what's the minimum number of pen lifts required?
     \end{pmatrix}
     \]
 \item
-    Suppose $G$ is adirected connected graph.
+    Suppose $G$ is a directed connected graph.
     $G$ has an Eulerian cycle if and only if every vertex $u$ has
     $\deg^+(u) = \deg^-(u)$.
 
@@ -167,7 +174,11 @@ If not, what's the minimum number of pen lifts required?
 
     The second figure has six `vertices' of odd degree (the six `corners' all
     have degree 3), so there is no Eulerian path or cycle, so it is not
-    possible.
+    possible. We can consider pen-lifts to be `adding in an extra edge' between
+    where the pen is lifted and where it is put back down. Since there are 6
+    vertices of odd degree, we can add 2 such edges between 4 of them,
+    and there will be 2 vertices of odd degree remaining. So, two pen lifts are
+    required.
 \end{enumerate}
 
 \end{document}
