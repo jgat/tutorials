@@ -104,7 +104,8 @@
 
 ## Week 9
 
-* Assignment 3 discussion 
+* Assignment 3 discussion
+* [Movie Seating](http://xkcd.com/173/) or [Travelling Salesman Problem](http://xkcd.com/399/)
 * Chapter F: Graphs
   * Graphs with loops, isolated vertices, parallel edges, simple graphs,
     digraphs, K\_n, bipartite graphs, K\_{mn}, subgraph, degree, total degree
@@ -142,23 +143,36 @@
 ## Week 10
 
 * Assignment 4 due on Friday
+* Chapter K: Counting and Probability
+  * Finding the probability of an event, multiplication rule
+  * Counting permutations (n!) and r-permutations (n! / (n-r)!)
+  * Addition rule for disjoint events
+  * Probability of the complement
+  * Inclusion/exclusion principle for \leq 3 sets.
+  * Pigeonhole Principle
+  * r-combinations (n \choose r)
+  * Binomial Theorem, Pascal's Formula
+* Exercise outlines:
+  * Counting permutations
+  * Conditional probabilities
+  * Probability of the complement.
+
+## Week 11
+
+* Assignment 4 discussion
 * Chapter G: Relations
   * Reflexifity, Symmetry, Transitivity
   * Equivalence relations, equivalence classes, partitions
   * Antisymmetry, Partial orders, Total orders.
   * Graphical representation
 
-## Week 11
-
-* Assignment 4 discussion
-* Chapter H: Functions
-
 ## Week 12
 
 * Assignment 5 due Friday
-* ???
+* Chapter H: Functions
 
 ## Week 13
 
 * Assignment 5 discussion
+* Chapter J: Groups
 * Exam revision
