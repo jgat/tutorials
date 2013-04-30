@@ -11,6 +11,11 @@ here's some of the important things to know.
 
 This is not intended to be a complete list. For a complete set of assessable
 content, see the official course material.
+
+Why does this exist? Mostly because there have been times where I've written
+lengthy responses to students' questions (e.g. in newsgroups), and I wanted
+somewhere permanent to keep the answers (so I don't have to type it all out
+again).
 </blockquote>
 
 ## Basic Expressions (Q1-5)
