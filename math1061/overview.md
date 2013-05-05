@@ -156,6 +156,20 @@
   * Counting permutations
   * Conditional probabilities
   * Probability of the complement.
+* Exercises:
+  * In a deal of 5 cards from a standard 52-card deck, what's the probability of
+    getting a pair of cards with the same face value?
+  * In a class of 305 students, an assignment is marked out of 33. What's the
+    largest `k` for which we can guarantee that there is a group of `k` students
+    in the class who got the same mark?
+  * We are painting the faces (Top, Bottom, Front, Back, Left, Right)
+    of a cube with 6 colours (R, O, Y, G, B, W), each with a different colour.
+    Note that if we rotate the cube, that counts as the same colouring.
+    How many different ways can we colour the cube?
+  * How many integers `n` satisfy `1 <= n <= 100` and `gcd(n, 100) \neq 1`?
+    (Hint: There are 100 integers between 1 and 100; count how many of them are
+    divisible by 2, by 3, by 5, by 6, by 10, by 15, and by 30)
+  * Use the binomial theorem to prove that \\sum\_{i=0}^n {n \choose i} = 2^n
 
 ## Week 11
 
