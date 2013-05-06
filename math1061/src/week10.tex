@@ -1,0 +1,113 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\begin{document}
+
+\pagestyle{myheadings}
+\markright{MATH1061 | Week 10 Tutorial (T5)}
+
+\title{MATH1061 | Week 10 Tutorial (T5)}
+\date{7 May 2013}
+\maketitle
+
+\begin{enumerate}
+\item
+    5 cards are dealt out from a standard 52-card deck.
+    \begin{enumerate}
+    \item
+    What's the probability that all cards are of the same suit?
+    \item
+    What's the probability that there is a pair of cards with the same face value?
+    \item
+    What's the probability that all cards are of the same suit, or that there is
+    a pair of cards with the same face value?
+    \end{enumerate}
+\item
+    We are painting the six faces of a cube (top, bottom, front, back, left,
+    right) with 6 colours (red, orange, yellow, green, blue, white), each with
+    a different colour. Note that two colourings of the cube are the same if
+    one is a rotation of the other. How many different ways can we colour the
+    cube?
+\item
+    Computers can store a set of data in a {\em hash table}, by storing the data
+    into a number of {\em buckets}, then the data can be accessed efficiently by
+    knowing which bucket to look in. Hash tables work most efficiently when the
+    values are spread evenly across the buckets.
+
+    If a hash table has buckets labelled from 0 to 15, and contains 137 values
+    spread across the buckets, what is the largest number $k$ such that we can
+    guarantee there is a bucket of size at least $k$?
+\item
+    How many integers between 1 and 90 have a common factor with 90?
+
+    (Hint: $\gcd(n, 90) \neq 1$ if and only if $n$ is divisible by 2, 3, or 5.
+    Use the inclusion-exclusion principle - workbook p.298)
+\item
+    Use the binomial theorem to prove that, for any nonnegative integer $n$,
+    \[
+        {n \choose 0} + {n \choose 1} + {n \choose 2} + \dots + {n \choose n} = 2^n.
+    \]
+\end{enumerate}
+
+\newpage
+
+\subsection*{Solutions}
+
+\begin{enumerate}
+\item
+    \begin{enumerate}
+    \item
+    The probability is
+    \[ 1 \cdot \frac{12}{51} \cdot \frac{11}{50} \cdot \frac{10}{49}
+       \cdot \frac{9}{48} = \frac{33}{16660} \approx 0.002. \]
+    \item
+    The complement of the event is that all cards have different face value,
+    which has probability
+    \[
+    1 \cdot \frac{48}{51} \cdot \frac{44}{50} \cdot \frac{40}{49}
+    \cdot \frac{36}{48} = \frac{2112}{4165} \approx 0.507,
+    \]
+    so the desired probability is $\frac{2053}{4165} \approx 0.493$.
+    \item
+    First note that the two events are mutually exclusive, since all 52 cards
+    are distinct. Then, the probability is
+    \[
+        \frac{33}{16660} + \frac{2053}{4165} = \frac{97}{196} \approx 0.495.
+    \]
+    \end{enumerate}
+\item
+    WLOG, the top face is red, and there is an axis of rotation perpendicular
+    to the top face. Then, there are 5 choices for the bottom face. WLOG, the
+    front face is fixed, then there are $3!=6$ choices for the remaining 3
+    faces, for a total of $30$ colourings.
+
+    Alternative solution is to observe that there are $6!=720$ colourings
+    without excluding rotations, and the square has 24 symmetries, giving
+    $720 / 24 = 30$ colourings.
+\item
+    There are a total of 16 buckets available to put values in. Since
+    $137 > 8 \cdot 16$, by the pigeonhole principle, there is a
+    group of at least 9 people who got the same mark. Since $137 < 9 \cdot 16$,
+    this is the largest such number.
+\item
+    An integer has a common factor with 90 if and only if it is divisible by
+    2, 3, or 5. Let $A_2$ be the set of integers between 1 and 90 which are
+    divisible by 2, $A_3$ be those divisible by 3, and $A_5$ be those divisible
+    by 5. Then,
+    \begin{align*}
+        |A_2 \cup A_3 \cup A_5| &= |A_2| + |A_3| + |A_5| - |A_2 \cap A_3|
+        - |A_2 \cap A_5| \\ & \quad - |A_3 \cap A_5| + |A_2 \cap A_3 \cap A_5| \\
+        &= 45 + 30 + 18 - 15 - 9 - 6 + 3 = 66
+    \end{align*}
+\item
+    \[
+        {n \choose 0} + {n \choose 1} + {n \choose 2} + \dots + {n \choose n}
+        = \sum_{k=0}^n {n \choose k} 1^k 1^{n-k} = (1+1)^n = 2^n.
+    \]
+\end{enumerate}
+
+\end{document}
