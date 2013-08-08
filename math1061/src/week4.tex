@@ -8,23 +8,52 @@
 \begin{document}
 
 \pagestyle{myheadings}
-\markright{MATH1061 | Week 4 Tutorial (T5)}
+\markright{MATH1061 | Week 3 Tutorial (T9)}
 
-\title{MATH1061 | Week 4 Tutorial (T5)}
+\title{MATH1061 | Week 3 Tutorial (T9)}
 \date{19 March 2013}
 \maketitle
 
-Prove or disprove the following claims:
+(v 1.1, 8 August 2013)
+\\
+
+\noindent
+For each of these claims, state the negation, then prove either the original claim or its negation.
+\\
+
+\noindent
+Example: ``The product of any two odd integers is odd'':
+\\
+
+\noindent
+Restated: $\forall n, m \in \mathbb{Z}, (n \text{ is odd} \land m \text{ is odd})
+\rightarrow nm \text{ is odd}$.
+
+\noindent
+Negation: $\exists n, m \in \mathbb{Z}: \sim (n \text{ is odd} \land m \text{ is odd})
+\land nm \text{ is even}$.
+
+\begin{proof}
+Let $n$ and $m$ be odd integers. Then, $\exists a, b \in \mathbb{Z}$ such
+that $n = 2a+1$ and $m = 2b+1$. Then,
+\[
+    nm = (2a+1)(2b+1) = 4ab + 2a + 2b + 1 = 2(2ab + a + b) + 1,
+\]
+which is odd (since $2ab + a + b \in \mathbb{Z}$).
+\end{proof}
+
+Exercise:
 
 \begin{enumerate}
-\item There is an integer $n$ such that $n > 3$ and $2^n - 1$ is prime.
-\item Every integer is either even or odd.
+%%\item Every integer is either even or odd.
 \item The sum of any two irrational numbers is irrational.
+    %(To formally state ``$x$ is irrational'', write ``$x \in \mathbb{R} \setminus \mathbb{Q}$'')
 %\item The sum of any two rational numbers is rational.
+\item There is a prime number $n$ such that $2^n - 1$ is composite.
 \item $\forall r, s \in \mathbb{Q}$, if $r < s$, then $\exists t \in \mathbb{Q}$ such that $r < t < s$.
 %      (Recall that ``$x \in \mathbb{Q}$'' means that $x$ is a rational number)
 \item $\forall a, b, c \in \mathbb{Z}$, if $a \mid c$ and $b \mid c$, then $(a + b) \mid c$.
-\item There is an integer $n$ such that $n^2 \equiv 2 \; (\text{mod } 3)$.
+%%\item There is an integer $n$ such that $n^2 \equiv 2 \; (\text{mod } 3)$.
 \item $\forall x \in \mathbb{R}$, $\floor{x} \leq \ceil{x}$.
 \end{enumerate}
 
@@ -66,29 +95,29 @@ Don't use the same letter for $\floor{x}$ and $\ceil{x}$!
 Solutions:
 
 \begin{enumerate}
-\item {\em True} | Example: For $n = 5$, $2^5 - 1 = 31$, which is prime.
-\item {\em True} | For any integer $n$, by the Quotient-Remainder Theorem with
-$d = 2$, $n = 2q + r$ for some integer $r$ with $0 \leq r < 2$. The only
-possibilities are $r = 0$, so $n = 2q$ which is even, or $r = 1$, so $n = 2q+1$
-which is odd.
+%\item {\em True} | For any integer $n$, by the Quotient-Remainder Theorem with
+%$d = 2$, $n = 2q + r$ for some integer $r$ with $0 \leq r < 2$. The only
+%possibilities are $r = 0$, so $n = 2q$ which is even, or $r = 1$, so $n = 2q+1$
+%which is odd.
 \item {\em False} | Counter-example: $\sqrt{2}$ and $-\sqrt{2}$ are irrational,
 but $\sqrt{2} + (-\sqrt{2}) = 0$ is rational.
 %\item {\em True} | Let $r$ and $s$ be rational numbers, then $r = \frac{a}{b}$
 %and $s = \frac{c}{d}$ for some $a, b, c, d \in \mathbb{Z}$ where $b, d \neq 0$.
 %Then, $r + s = \frac{ad + bc}{bd}$. Since $ad + bc \in \mathbb{Z}$ and
 %$0 \neq bd \in \mathbb{Z}$, so $r + s$ is rational.
+\item {\em True} | Example: For $n = 11$, $2^{11} - 1 = 2047 = 23 \cdot 89$.
 \item {\em True} | Let $r, s \in \mathbb{Q}$ such that $r < s$, then $r = \frac{a}{b},
 s = \frac{c}{d}$ for some $a, b, c, d \in \mathbb{Z}$ where $b, d \neq 0$. Then,
-let $t = \frac{r+s}{2} = \frac{ad + bc}{2bd}$. Now, since $r < s$, then 
+let $t = \frac{r+s}{2} = \frac{ad + bc}{2bd}$. Now, since $r < s$, then
 $\frac{r + r}{2} < \frac{r + s}{2} < \frac{s + s}{2}$, so $r < t < s$. Also,
 $ad + bc, 2bd \in \mathbb{Z}$, and $2bd \neq 0$, so $t$ is rational.
 \item {\em False} | Counter-example: $a = 2, b = 3, c = 6$. Observe that
 $2 \mid 6$ and $3 \mid 6$, but $(2 + 3) = 5 \nmid 6$.
-\item {\em False} | Prove the negation, by division into cases modulo 3:
-if $n \equiv 0 \; (\text{mod } 3)$, then $n^2 \equiv 0^2 = 0 \; (\text{mod } 3)$;
-if $n \equiv 1 \; (\text{mod } 3)$, then $n^2 \equiv 1^2 = 1 \; (\text{mod } 3)$;
-if $n \equiv 2 \; (\text{mod } 3)$, then $n^2 \equiv 2^2 = 4 \equiv 1 \; (\text{mod } 3)$.
-In each of these cases, $n^2 \not\equiv 2$ (mod 3).
+%\item {\em False} | Prove the negation, by division into cases modulo 3:
+%if $n \equiv 0 \; (\text{mod } 3)$, then $n^2 \equiv 0^2 = 0 \; (\text{mod } 3)$;
+%if $n \equiv 1 \; (\text{mod } 3)$, then $n^2 \equiv 1^2 = 1 \; (\text{mod } 3)$;
+%if $n \equiv 2 \; (\text{mod } 3)$, then $n^2 \equiv 2^2 = 4 \equiv 1 \; (\text{mod } 3)$.
+%In each of these cases, $n^2 \not\equiv 2$ (mod 3).
 \item {\em True} | Let $n = \floor{x}$ and $m = \ceil{x}$, then $n \leq x < n + 1$
 and $m-1 < x \leq m$. Therefore, $n \leq x \leq m$, so $n \leq m$. Substituting
 in the definitions of $n$ and $m$, $\floor{x} \leq \ceil{x}$.
