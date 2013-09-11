@@ -16,8 +16,9 @@ To request the addition of materials, or to point out a mistake,
 
 Tutorial material is made available from a subset of the course offerings I have tutored:
 
-* [CSSE1001](http://uq.edu.au/study/course.html?course_code=CSSE1001), Semesters (1 2011; 2 2011; 1 2012; 2 2012; 1 2013)
-* [MATH1061](http://uq.edu.au/study/course.html?course_code=MATH1061), Semesters (2 2012; 1 2013)
+* [CSSE1001](http://uq.edu.au/study/course.html?course_code=CSSE1001), Semesters (1 2011; 2 2011; 1 2012; 2 2012; 1 2013; 2 2013)
+* [MATH1061](http://uq.edu.au/study/course.html?course_code=MATH1061), Semesters (2 2012; 1 2013; 2 2013)
+* [DECO2800](http://uq.edu.au/study/course.html?course_code=DECO2800), Semester 2 2013
 * [CSSE2003](http://uq.edu.au/study/course.html?course_code=CSSE2003&offer=53544c554332494e&year=2012), Semester 2 2012
 * [MATH1051](http://uq.edu.au/study/course.html?course_code=MATH1051&offer=53544c554331494e&year=2012), Semester 1 2012
 * [MATH1050](http://uq.edu.au/study/course.html?course_code=MATH1050&offer=53544c554332494e&year=2011), Semester 2 2011
