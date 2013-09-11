@@ -1,0 +1,58 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[lmargin=2.5cm,rmargin=2.5cm,tmargin=2cm,bmargin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\pagestyle{myheadings}
+\markright{MATH1061 | Set Theory Tutorial}
+
+\begin{enumerate}
+\item Prove that for arbitrary sets $A,B,C$ that
+\[
+    (A \setminus B) \setminus C = A \setminus (B \cup C).
+\]
+\item Prove that for arbitrary sets $A$ and $B$ we have $A \subseteq B$ if and
+only if $A \cup B = B$.
+\item Let $X = \{1, \{1\}, \{\emptyset\}\}$.
+Write down the elements of $\mathcal{P}(X) \setminus X$.
+\end{enumerate}
+
+Challenge: If $X$ is a finite set, prove by induction that
+$|\mathcal{P}(X)| = 2^{|X|}$.
+
+Challenge: Prove that for arbitrary sets $A$ and $B$, that $A \subseteq B$ iff
+$\mathcal{P}(A) \subseteq \mathcal{P}(B)$.
+\\
+
+Solution/outlines:
+
+\begin{enumerate}
+\item Element argument. $x \in (A \setminus B) \setminus C)$ iff
+$x \in A$ and $x \not \in B$ and $x \not \in C$, iff $x \in A$ and
+$\sim((x \in B) \lor (x \in C))$, iff $x \in A \setminus (B \cup C)$.
+\item Construct a correspondence with the predicate
+\[
+    (P(x) \to Q(x)) \leftrightarrow ((P(x) \lor Q(x)) \leftrightarrow Q(x)),
+\]
+show that this is a tautology (truth table or otherwise). Or, show that if
+$A \subseteq B$ then $A \cup B \subseteq B \subseteq A \cup B$, and if
+$A \cup B = B$ then $A \subseteq B$.
+\item $\mathcal{P}(X) \setminus X = \big\{\emptyset, \{\{1\}\}, \{\{\emptyset\}\},
+\{1, \{1\}\}, \{1, \{\emptyset\}\}, \{\{1\}, \{\emptyset\}\},
+\{1, \{1\}, \{\emptyset\}\}\big\}$.
+\item (Challenge) Let $n = |X|$, induct on $n$. Base case: $\mathcal{P}(\emptyset)
+= \{\emptyset\}$. Inductive step: Pick $x \in X$, $X' = X \setminus \{x\}$,
+\[
+    \mathcal{P}(X) = \mathcal{P}(X) \cup \{ A \cup \{x\} \mid A \in \mathcal{P}(X)  \}.
+\]
+\item (Challenge) ($\Rightarrow$) If $A \subseteq B$, then for any $X \in
+\mathcal{P}(A)$, we have $X \subseteq A \subseteq B$, so $X \subseteq B$, so
+$X \in \mathcal{P}(B)$. Therefore, $\mathcal{P}(A) \subseteq \mathcal{P}(B)$.
+
+($\Leftarrow$) If $\mathcal{P}(A) \subseteq \mathcal{P}(B)$, then in particular,
+$A \in \mathcal{P}(A) \subseteq \mathcal{P}(B)$, so $A \subseteq B$.
+\end{enumerate}
+
+\end{document}
