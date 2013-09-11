@@ -23,6 +23,8 @@ explain why.
     \item A tree on 7 vertices with no leaves.
     \item A tree on 5 vertices which contains a Hamiltonian path.
     \item A connected graph with 8 vertices and 6 edges.
+    \item A simple bipartite graph with 5 vertices and 5 edges.
+    \item A simple bipartite graph with 5 vertices and 7 edges.
     %\item A graph with the following incidence matrix:
     %\[
     %    J = \begin{pmatrix}
@@ -38,6 +40,9 @@ explain why.
 The complete bipartite graph $K_{1,n}$ is a special type of tree, called a
 {\em star}. Draw the star $K_{1,5}$, and write its adjacency matrix $A$ and
 incidence matrix $J$.
+\item
+For which values of $m$ and $n$ does the graph $K_{m,n}$ have an Eulerian circuit?
+When does it have an Eulerian path? When does it have a Hamiltonian circuit?
 \item
 In lectures we proved theorems about when an undirected graph has an Euler
 circuit or an Euler path (see workbook p.162).
@@ -129,6 +134,9 @@ If not, what's the minimum number of pen lifts required?
     $\{ab, bc, cd, de\}$. The Hamiltonian path follows the vertices in the order
     $a, b, c, d, e$.
     \item Not possible: Using 6 edges, we can only connect at most 7 vertices.
+    \item Possible. Consider $K_{2,3}$ with one edge removed.
+    \item Not possible: Note that $K_{2,3}$ has 6 edges and $K_{1,4}$ has four,
+    any more would not give a bipartite graph.
 %    \item Not possible: The 4th edge (4th column of the matrix) only has one
 %    endpoint.
     \end{enumerate}
@@ -154,6 +162,10 @@ If not, what's the minimum number of pen lifts required?
         0 & 0 & 0 & 0 & 1 \\
     \end{pmatrix}
     \]
+\item
+    $K_{m,n}$ has an Eulerian circuit iff $m$ and $n$ are both even. It has an
+    Eulerian path if $m = 2$ and $n$ is odd (or vice versa), or if $m = n = 1$.
+    It has a Hamiltonian circuit iff $m = n$.
 \item
     Suppose $G$ is a directed connected graph.
     $G$ has an Eulerian cycle if and only if every vertex $u$ has

@@ -1,4 +1,4 @@
-all: midsem.pdf week2.pdf week3.pdf week4.pdf week5.pdf week6.pdf sets.pdf
+all: midsem.pdf week2.pdf week3.pdf week4.pdf week5.pdf week6.pdf sets.pdf week9.pdf
 
 %.pdf: src/%.tex
 	pdflatex $<
