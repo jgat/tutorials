@@ -1,0 +1,97 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}
+\begin{document}
+
+\pagestyle{myheadings}
+\markright{MATH1061 | Week 10 Tutorial | Semester 2, 2013}
+
+\subsection*{Exercises}
+
+\begin{enumerate}
+\item
+Define a relation $\sigma$ on $\R$ such that $x \sigma y$ if and only if
+$x - y \in \Z$. Show that $\sigma$ is an equivalence relation.
+Describe the equivalence classes.
+
+\item
+Let $f : \Z \to \Z$ be given by $f(x) = x^2$. Is $f$ one-to-one? Is it onto?
+
+\item
+Let $g : \R \to \R$ be given by $g(x) = x + 7$. Is $g$ one-to-one? Is it onto?
+
+\item
+Let $f : \R \to \R$ be given by $f(x) = \floor{x}$. Is $f$ onto?
+
+Similarly, let $g : \R \to \Z$ be given by $g(x) = \floor{x}$. Is $g$ onto?
+\end{enumerate}
+
+\newpage
+
+\subsection*{Solutions}
+
+\begin{enumerate}
+\item
+To show that $\sigma$ is an equivalence relation, we must show that it is
+reflexive, symmetric, and transitive:
+\begin{enumerate}
+\item For any $x \in \R$, $x - x = 0 \in \Z$, so $x \sigma x$; therefore
+    $\sigma$ is reflexive.
+\item For any $x, y \in \R$, if $x \sigma y$, then let $m = x - y, m \in \Z$.
+    Then, $y - x = -m \in \Z$, so $y \sigma x$; therefore $\sigma$ is
+    symmetric.
+\item For $x, y, z \in \R$, if $x - y \in \Z$ and $y - z \in \Z$, let
+    $m = x - y$, $n = y - z$. Then, $x - z = (x - y) + (y - z) = m + n \in \Z$,
+    so $x \sigma z$. Therefore, $\sigma$ is transitive.
+\end{enumerate}
+Note that we could have avoided using the label
+$m$ and just said ``if $x - y \in \Z$, then $y-x = -(x-y) \in \Z$.''
+Similarly we could have skipped the labels $m$ and $n$ in transitivity.
+
+Now, for any $x \in \R$, the equivalence class containing $x$ consists of
+all real numbers which differ from $x$ by an integer amount, i.e.
+\[
+    [x] = \{\dots, x-2, x-1, x, x+1, x+2, \dots\}.
+\]
+The set of equivalence classes $[x]$ for each real number $0 \leq x < 1$ gives all
+equivalence classes.
+\qed
+
+\item
+$f$ is not 1-to-1, a counterexample\footnote{i.e. an
+example of $x_1, x_2 \in \Z$ such that $x_1 \neq x_2$ but $f(x_1) = f(x_2)$.}
+is: $f(-1) = 1 = f(1)$, but $-1 \neq 1$.
+
+$f$ is not onto: for instance, there is no integer $x$ for which $x^2 = -1$.
+
+\item
+$g$ is one-to-one\footnote{To show $g$ is one-to-one, we have to prove either
+``$x_1 \neq x_2 \implies g(x_1) \neq g(x_2)$'' or
+``$g(x_1) = g(x_2) \implies x_1 = x_2$''.}:
+Suppose $x_1+7 = x_2+7$ for $x_1, x_2 \in \R$; subtracting 7 from each side,
+we have $x_1 = x_2$.
+
+$g$ is onto\footnote{We have to prove that for any $y \in \R$ (the codomain),
+there is some $x \in \R$ (the domain)
+such that $y = f(x)$ (informally, `If I give you any $y$, how can you
+choose a value that when put into the function, gives $y$?').}:
+For any $y \in \R$, the value $y-7$ has $f(y-7) = (y-7)+7 = y$.
+
+\item
+$f$ is not onto, since there is no $x \in \R$ for which $\floor{x} = \frac{3}{2}$
+(or any other non-integer value).
+
+$g$ is onto, since for any $y \in \Z$, we have $g(y) = y$.
+
+Note that the choice of input to $g$ is not unique, we could have also said
+$g\left(y+\frac{1}{2}\right) = y$, or $g(y + 0.013) = y$. To show that $g$ is
+onto, we only need some value that works, we don't care how many such values
+there are.
+\end{enumerate}
+
+\end{document}
