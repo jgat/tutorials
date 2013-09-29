@@ -1,0 +1,173 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[lmargin=2cm,rmargin=2cm,tmargin=2cm,bmargin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\calZ}{\mathcal{Z}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+
+\pagestyle{myheadings}
+\markright{MATH1061 | Challenge Questions}
+
+\title{MATH1061 | Challenge Questions}
+\date{27 September 2013}
+\maketitle
+
+\section{Sets}
+
+\begin{enumerate}
+\item For a finite set $X$, show that $|\mathcal{P}(X)| = 2^{|X|}$ (hint: use
+induction).
+\end{enumerate}
+
+\section{Graphs}
+
+\begin{enumerate}
+\item Show that a tree on $n \geq 2$ vertices has at least one leaf
+(hint: pick a vertex, and start drawing a path away from it).
+\item Repeat the process in the hint to show that a tree on $n \geq 2$ vertices
+has at least two leaves.
+\item Prove by induction that a tree on $n$ vertices has $n-1$ edges.
+(Hint: if you remove a leaf from a tree, the result is also a tree)
+\item Knowing that a tree on $n$ vertices has $n-1$ edges, give an alternate
+proof that a tree on $n \geq 2$ vertices has at least two leaves.
+\end{enumerate}
+
+\section{Relations}
+
+For a relation $\rho$ on a set $A$, we say that $\rho$ is {\em irreflexive} if
+for all $x \in A$, it does {\bf not} hold that $x \rho x$.
+We say that $\rho$ is {\em asymmetric} if, whenever $x \rho y$, it does not
+hold that $y \rho x$.
+
+\begin{enumerate}
+\item Let $A = \{1,2,3\}$.
+\begin{enumerate}
+\item State a relation on $A$ which is both symmetric and antisymmetric.
+\item State a relation on $A$ which is neither symmetric nor antisymmetric.
+\item State a relation on $A$ which is neither reflexive nor irreflexive.
+\item State a relation on $A$ which is neither symmetric nor asymmetric.
+\end{enumerate}
+\item For any set $A$, find a relation which is both an equivalence relation
+and a partial order.
+\item We say that a relation is a ``strict partial order'' if it is
+irreflexive, asymmetric and transitive.
+\begin{enumerate}
+\item Let $A$ be a set, and let $\preceq$ be a partial order on $A$.
+Define a relation $\prec$ on $A$ by: $a \prec b$ iff $a \preceq b$ and
+$a \neq b$. Show that $\prec$ is a strict partial order.
+\item
+Let $\prec$ be a strict partial order on $A$, and define a relation $\preceq$
+on $A$ by: $a \preceq b$ iff $a \prec b$ or $a = b$. Show that $\preceq$ is
+a partial order.
+\end{enumerate}
+\item Let $\rho$ be a relation on a set $A$ which is symmetric and transitive.
+Show that $\rho$ is an equivalence relation.
+\end{enumerate}
+
+\section{Functions and Cardinality}
+
+In the following questions, our aim is to find a sensible way to talk about the
+`size' of an infinite set, by using properties about the size of finite sets.
+
+\begin{enumerate}
+\item Let $X = \{1, 2, 3\}$, and $Y = \{1, 2, 3, 4\}$.
+\begin{enumerate}
+\item Construct a one-to-one function from $X$ to $Y$, and an onto function
+from $Y$ to $X$.
+\item Explain why there are no surjections from $X$ to $Y$.
+\item Explain why there are no injections from $Y$ to $X$.
+\end{enumerate}
+
+\item Let $A$ and $B$ be finite sets.
+\begin{enumerate}
+\item Prove that $|A| \leq |B|$ iff there exists an injective
+function from $A$ to $B$.
+\item Prove that $|A| \geq |B|$ iff there exists a surjective
+function from $A$ to $B$.
+\item Prove that $|A| = |B|$ iff there exists a bijective
+function from $A$ to $B$.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item Let $\iota_\X$ be the identity function on a set $\X$. Prove that
+$\iota_\X$ is a bijection.
+\item If $f : \X \to \Y$ is a bijection, prove that $f^{-1}$ is a bijection.
+\item If $f : \X \to \Y$ and $g : \Y \to \calZ$ are both one-to-one,
+prove that $g \circ f$ is one-to-one. (This is a theorem from workbook chapter H.4.)
+\item If $f : \X \to \Y$ and $g : \Y \to \calZ$ are both onto functions,
+prove that $g \circ f$ is onto. (This is a theorem from workbook chapter H.4.)
+\item Define a relation $\sim$ on sets such that for any sets $A$ and $B$,
+$A \sim B$ if and only if there exists a bijection from $A$ to $B$. Show that
+$\sim$ satisfies the three axioms for being an equivalence relation.
+\item Conclude from 2(c) and 3(e)
+that if $A$ and $B$ are finite, then $A \sim B$ iff $|A|=|B|$.
+\end{enumerate}
+
+\item
+For any sets $A$ and $B$ (possibly infinite), we say that $A$ and $B$ have the
+same `cardinality' if $A \sim B$, and we write $|A|=|B|$.
+Note that `cardinality' can be thought of as `size', but also allowing infinite
+sets. Read Chapter H.5 of the workbook before proceeding.
+\begin{enumerate}
+\item Let $\Z$ be the set of integers and let $\Z_{even}$ be the set of even
+integers. Show that $|\Z| = |\Z_{even}|$, i.e. show that they have the
+same cardinality, even though $\Z$ contains seemingly `more' elements than
+$\Z_{even}$.
+\item Let $\Z^+$ be the set of positive integers, also denoted $\N$.
+Research Cantor's diagonal argument, which shows that $|\R| \neq |\Z^+|$,
+hence $\R$ is uncountable.
+\item Show that $\Z$ is countable, i.e. $|\Z| = |\Z^+|$.
+\item Show that $\Q$ is countable.
+\item Let $(-\frac{\pi}{2}, \frac{\pi}{2}) = \{x \in \R \mid -\frac{\pi}{2}
+< x < \frac{\pi}{2}\}$, i.e. the interval of
+real numbers between $-\frac{\pi}{2}$ and $\frac{\pi}{2}$. Show that this
+interval has the same cardinality as $\R$.
+\item Show that the interval $(0, 1) = \{x \in \R \mid 0 < x < 1\}$ has the
+same cardinality as $(-\frac{\pi}{2}, \frac{\pi}{2})$.
+\item Conclude that $(0, 1)$ is uncountable.
+\end{enumerate}
+
+\item Now that we have different `sizes' of infinity, we would like to compare
+them, and talk about when one cardinality is `bigger' than another.
+
+\begin{enumerate}
+\item
+For sets $A$, $B$, define a relation $\preceq$ such that $A \preceq B$ iff
+there exists an injection from $A$ to $B$.
+
+Let $A, B, C$ be sets where $A$ has the same cardinality as $B$. Show that
+if $A \preceq C$, then $B \preceq C$; and if $C \preceq A$, then $C \preceq B$.
+Hence conclude that this relation can be instead thought of as a relation on
+cardinalities, instead of a relation on sets.
+\item
+For sets $A$, $B$ with cardinalities $|A|$ and $|B|$, we say that
+$|A| \leq |B|$ if there exists an injection from $A$ to $B$.
+(Note that for the size of finite sets, this definition agrees with the result
+from 2(a).)
+Use the results from 3(a) and 3(c) to conclude that this relation is
+reflexive and transitive.
+\item The Cantor-Bernstein-Schroeder theorem shows that if there is an injection
+from $A$ to $B$, and an injection from $B$ to $A$, then there is a bijection
+from $A$ to $B$.
+Conclude from this that the relation $\leq$ is a partial order on cardinalities.
+\item If $|A| \leq |B|$ and $|A| \neq |B|$, we say that $|A| < |B|$.
+Show that $|\Z^+| < |\R|$.
+\item Show that $|\Q| < |(0, 1)|$, hence conclude that there are more numbers
+between $0$ and $1$ than there are rational numbers in the entire number line.
+\item If $A$ is finite and $B$ is infinite, show that $|A| < |B|$.
+\item Using the theorem from page 244 of the workbook (known as Cantor's
+theorem), show that $|X| < |\mathcal{P}(X)|$ for any set $X$.
+Hence, show that there are infinitely many types of infinite cardinalities
+(hint: consider $\Z$, $\mathcal{P}(\Z)$, $\mathcal{P}(\mathcal{P}(\Z))$, \dots).
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
