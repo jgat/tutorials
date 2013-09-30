@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PY{k}{def} \PY{n+nf}{hanoi}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+    \PY{n}{\PYZus{}hanoi\PYZus{}helper}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{A}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{C}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+
+\PY{k}{def} \PY{n+nf}{\PYZus{}hanoi\PYZus{}helper}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n}{C}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{n} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+        \PY{k}{return}
+    \PY{n}{\PYZus{}hanoi\PYZus{}helper}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n}{C}\PY{p}{)}
+    \PY{k}{print} \PY{n}{A}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{to B}\PY{l+s}{\PYZdq{}}
+    \PY{n}{\PYZus{}hanoi\PYZus{}helper}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{C}\PY{p}{,} \PY{n}{A}\PY{p}{)}
+    \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{B to}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{C}
+    \PY{n}{\PYZus{}hanoi\PYZus{}helper}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n}{C}\PY{p}{)}
+\end{Verbatim}

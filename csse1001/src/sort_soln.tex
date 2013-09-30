@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PY{k}{def} \PY{n+nf}{sort}\PY{p}{(}\PY{n}{xs}\PY{p}{)}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Sorts a list of numbers.}
+\PY{l+s+sd}{    e.g. sort([3,7,2,4,3]) \PYZhy{}\PYZgt{} [7,4,3,3,2] \PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{if} \PY{o+ow}{not} \PY{n}{xs}\PY{p}{:}
+        \PY{k}{return} \PY{n}{xs}
+    \PY{n}{a} \PY{o}{=} \PY{n+nb}{min}\PY{p}{(}\PY{n}{xs}\PY{p}{)}
+    \PY{n}{i} \PY{o}{=} \PY{n}{xs}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{n}{a}\PY{p}{)}
+    \PY{k}{return} \PY{n}{sort}\PY{p}{(}\PY{n}{xs}\PY{p}{[}\PY{p}{:}\PY{n}{i}\PY{p}{]} \PY{o}{+} \PY{n}{xs}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{)} \PY{o}{+} \PY{p}{[}\PY{n}{a}\PY{p}{]}
+\end{Verbatim}

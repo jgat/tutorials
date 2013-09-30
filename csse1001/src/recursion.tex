@@ -1,0 +1,131 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[lmargin=2.5cm,rmargin=2.5cm,tmargin=2.5cm,bmargin=2.5cm]{geometry}
+\usepackage{amsthm}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\input{src/pyghead}
+\begin{document}
+
+\pagestyle{myheadings}
+\markright{CSSE1001 Recursion Challenge Questions}
+
+\begin{enumerate}
+\item[Q1.]
+The following incomplete recursive function sorts a list of numbers. Write the
+missing lines of code (including any recursive call).
+
+\input{src/sort}
+
+\item[Q2.]
+In lectures, we wrote a program which gives instructions to solve the Tower
+of Hanoi problem.
+The solution described in lectures is to move the first $n-1$ disks from $A$ to
+$B$, then move the largest disk from $A$ to $C$, then the $n-1$ disks from $B$
+to $C$.
+
+A variant of the problem is to have 3 towers $A$, $B$ and $C$
+as before, but you cannot move a piece from $A$ to $C$ or $C$ to $A$.
+Find the solution to this problem, then
+write a function that takes a number $n$ and prints the instructions to move
+the tower from $A$ to $C$, without moving any pieces directly $A \to C$ or
+$C \to A$.
+
+Run your function on $n=3$ and verify the output by following the instructions.
+
+\item[Q3.]
+Consider the following {\tt sum1} function, which attempts to compute the sum
+of a list of numbers. Give an example of a list {\tt xs} where this function
+will not work, and explain why it doesn't work.
+
+\input{src/sum1}
+
+\item[Q4.]
+Next, consider the following {\tt sum2} function, which is a modification of the
+above.
+Compute by hand the sum of the list {\tt [3,4,5,6,7]}. In your working,
+indicate the recursive calls that are made.
+
+Then, use induction to prove that this function will always return the correct sum.
+(Hint: {\tt xs[:m]} is a list of length $m$, and {\tt xs[m:]} is a list of length $n-m$.)
+
+Given that we know {\tt sum1} doesn't work, explain why
+we could not use the same technique to prove {\tt sum1} is correct.
+(i.e. what part of the proof for {\tt sum2} requires that $n=1$ is a base case?)
+
+\input{src/sum2}
+
+\end{enumerate}
+
+\newpage
+
+\subsection*{Solutions}
+
+\begin{enumerate}
+\item[Q1.]
+A sample {\tt sort} function is as follows.
+\input{src/sort_soln}
+
+\item[Q2.]
+Solution: move the first $n-1$ disks to $C$, then move
+the $n^{\rm th}$ to $B$, then move the first $n-1$ disks back to $A$, then move the
+$n^{\rm th}$ to $C$, then move the first $n-1$ back to $C$.
+\input{src/hanoi}
+
+\item[Q3.]
+Consider the input {\tt xs = [1]}. This will set $n = 1$, go into the {\tt else}
+statement, and set $m = 1 / 2 = 0$.
+Then, the function will return {\tt sum([]) + sum([1])}. The second of these
+calls is the same as the original call, so we will have an infinite recursion.
+
+\item[Q4.]
+\begin{itemize}
+\item[]
+{\tt sum2([3,4,5,6,7]) = sum2([3,4]) + sum2([5,6,7])} $= \dots = 25$
+\begin{itemize}
+\item[]
+{\tt sum2([3,4]) = sum2([3]) + sum2([4])} $= \dots = 7$
+\begin{itemize}
+\item[]
+{\tt sum2([3]) = 3}
+\item[]
+{\tt sum2([4]) = 4}
+\end{itemize}
+\item[]
+{\tt sum2([5,6,7]) = sum2([5]) + sum2([6,7])} $= \dots = 18$
+\begin{itemize}
+\item[]
+{\tt sum2([5]) = 5}
+\item[]
+{\tt sum2([6,7]) = sum2([6]) + sum2([7])} $= \dots = 13$
+\begin{itemize}
+\item[]
+{\tt sum2([6]) = 6}
+\item[]
+{\tt sum2([7]) = 7}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+{\bf Claim:} The {\tt sum2} function returns the sum of the list {\tt xs}.
+
+Base cases: if $n = 0$, then the list is empty, so the sum is 0 (by definition
+of the empty sum). If $n = 1$, then the sum of the list is the value of the
+single element.
+
+Inductive hypothesis: For some $n \geq 2$, suppose that the {\tt sum2} function
+returns the sum of any list of length $k$, for any $0 \leq k < n$.
+
+Inductive step: If {\tt xs} has length $n \geq 2$, then
+$m = \floor{\frac{n}{2}}$ satisfies $1 < m < n$. Then, the sublists of length
+$m < n$ and $n-m < n$ will return $\sum_{i=0}^{m-1} {\tt xs[i]}$ and
+$\sum_{i=m}^{n-1} {\tt xs[i]}$ respectively, then the function will return
+$\sum_{i=0}^{n-1} {\tt xs[i]}$, the correct sum. \qed
+
+If we tried the same proof for {\tt sum1}, it would require the inductive step
+to hold for $n \geq 1$ (instead of $n \geq 2$). However, if $n \geq 1$, it is
+not guaranteed that $n-m < n$ (since it is possible that $m=0$), hence we
+cannot apply the inductive hypothesis to the list {\tt xs[m:]}.
+\end{enumerate}
+
+\end{document}
