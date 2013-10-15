@@ -1,0 +1,218 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[lmargin=2.8cm,rmargin=2.8cm,tmargin=3cm,bmargin=3cm]{geometry}
+\usepackage{hyperref}
+\input{pyghead}
+\begin{document}
+
+\pagestyle{myheadings}
+\markright{DECO2800/7280 Tutorial Questions}
+
+\begin{center}
+\bf
+DECO2800/7280 | Design Computing Studio 2 - Testing \& Evaluation
+
+Tutorial Questions
+
+v1.0 (October 2013)
+\end{center}
+
+\begin{enumerate}
+\item
+For each of the hypothetical scenarios below, describe briefly how you would
+identify the source of the problem, and once it is fixed, what measures you
+would take to prevent the problem from happening again.
+
+You have the following tools available; include in your
+answer which tool(s) you would use, how you would use them, and how the
+information they reveal would help you diagnose the problem:
+\begin{itemize}
+\item
+a version management tool (Git)
+\item
+an issue tracking/ticketing system (GitHub)
+\item
+a developer documentation wiki (GitHub)
+\item
+an automated build system (Gradle)
+\item
+a continuous integration server (Jenkins)
+\item
+a debugger (Eclipse)
+\item
+a profiler (VisualVM)
+\item
+logging (slf4j)
+\item
+unit testing frameworks (JUnit, Mockito)
+\item
+integration testing frameworks (JUnit, Mockito)
+\item
+static analysis tools (Sonar, PMD, FindBugs, etc)
+\item
+refactorings
+\item
+user testing methods
+\end{itemize}
+
+\begin{enumerate}
+\item
+You've developed a client/server application, and you've noticed that the
+server occasionally crashes. You're able to connect to the server with the
+client and reproduce a sequence of actions to crash the server.
+
+\item
+You've developed a client/server application, but if you leave the server
+application running for too long, it starts using up a lot of the machine's
+memory, and eventually must be restarted.
+
+\item
+You've implemented an algorithm, along with a unit test for the algorithm.
+Yesterday, your algorithm was working, but you ran the test again today to find
+it's now failing. Your colleagues have made changes to other parts of the
+codebase since then, and you suspect that they forgot to run the tests, and
+unknowingly broke your code.
+
+\item
+You've noticed that many of the users who have signed up for your arcade system
+haven't logged in recently. You've also heard a couple of users say they can't
+play any multiplayer games, but you've tested this and you know that it is
+possible to play multiplayer games.
+\end{enumerate}
+
+\newpage
+
+\item
+Suppose we have a class which doesn't have any unit tests, and we wish to write
+a set of unit tests to achieve full path coverage (that is, for each method,
+every possible execution path is covered by a test). Which one of the following
+metrics would make it significantly easier to achieve full path coverage?
+\begin{itemize}
+\item Low Number of Lines of Code
+\item Low Cyclomatic Complexity
+\item High Duplication
+\item Low Lack of Cohesion Metric (LCOM4)
+\end{itemize}
+
+\item
+For each of the following hypothetical scenarios related to the arcade system,
+identify a design pattern which you would use in the design of the feature,
+and identify the classes which would be used in the pattern.
+
+There is no single `correct answer'; correctness is
+determined partially by your ability to justify your answer, and demonstrate
+knowledge of the design pattern used.
+\begin{enumerate}
+\item
+In the game Pac-Man, there are a number of ghosts chasing Pac-Man.
+Each ghost has a different tactic, so that different ghosts will move in
+potentially different directions. If users play in different difficulties
+(easy/medium/hard), or progress to different levels, the ghosts may employ
+different tactics.
+
+\item
+In the arcade's matchmaking service, if you wish to play a multiplayer game,
+you connect to the service, which will then present you with another user to
+play against (and conversely, that user will be presented with you as an
+opponent). You and your opponent will then confirm with the service to begin
+the game.
+The service must manage a set of users who are connected, decide
+which ones to match, present the users with their opponents, and check
+that each user has confirmed to begin the game.
+
+\item
+In a platform game (similar to Super Mario Bros.), players jump between different
+platforms to avoid enemies and reach a goal. Users can buy powerups from the
+arcade store, which enhance their character's abilities
+(e.g. jump higher, run faster, or become immune to enemies).
+Powerups last for the duration of one instance of the game,
+and can be composed to gain multiple enhancements at the same time.
+
+\item
+In the arcade's spectating service, users can choose to broadcast a game to
+the public. Whenever the user makes a move in the game, they will notify the
+service, which will then notify all spectators so that they can see the move.
+\end{enumerate}
+
+\item
+Draw a UML Class Diagram of the classes in the {\tt deco2800.arcade.pong}
+package. You do not need to include classes outside of this package.
+In your diagram:
+\begin{itemize}
+\item
+Distinguish between classes, abstract classes, and interfaces,
+\item
+Identify inheritance/realisation relationships,
+\item
+Identify associations, aggregations, and/or compositions between classes,
+\item
+Identify attributes and methods, including their visibility and types
+(note: this may make your diagram large. You may wish to first sketch your
+diagram without including this.)
+\end{itemize}
+
+\item
+Draw a UML State Diagram for the Pong game in the arcade, showing the transitions
+between `Ready', `In Progress', and `Game Over'. Clearly identify the start and
+end states.
+
+\item
+Draw a UML Sequence Diagram for the method
+{\tt Pong.handleInput()} in the Pong game.
+Be sure to include the different behaviour of the {\tt GameState} subclasses,
+as well as any object creation or deletion, loops, branches, etc.
+You do not need to show the detail of the methods outside the
+{\tt deco2800.arcade.pong} package, including
+{\tt incrementAchievement}, {\tt sendNetworkObject}, or any of the GDX methods.
+
+\item
+Design a set of functional test cases for the {\tt Pong.endPoint} method to
+achieve full branch coverage. For each test, describe the setup/inputs, and
+the expected results (including expected changes to the state of the {\tt Pong}
+class). State which classes should be mocked in the test design.
+
+You may assume that other methods in the class, such as
+{\tt incrementAchievement} and {\tt createScoreUpdate}, are correct, and don't
+need testing.
+
+\item
+You've invented a new card game, called
+{\em 499}, and implemented a version of the game in the DECO2800
+arcade system. The game can be played in multiplayer mode against other people
+over the network, or in single-player mode againts artificial intelligences.
+
+You have personally designed and implemented all the rules for the game, the
+AI for single-player mode, and the interface to play the game on the
+arcade client (including the controls to play your cards, and the way you
+display the game).
+
+You wish to perform user experience testing on this game. Identify two aspects
+of this game which you could potentially test. For each one, briefly describe
+what aspect of your design you would seek to evaluate, and what observations
+you would hope to gather.
+
+\item
+The following method uses JDBC to find the number of credits available to a
+given username. Identify and describe three potential problems that could occur
+in this method, and describe what should be done instead.
+
+\input{sample}
+
+\item
+Complete the following questions/tasks:
+\begin{enumerate}
+\item
+CSSE2003 Exam 2012, Questions 1, 4, 7, 10, 11, 12, 13, 14.
+\item
+\url{https://github.com/wbillingsley/tutorial-thekey-mock-public}
+\item
+\url{https://github.com/wbillingsley/tutorial-anangelwhenyoulook-jpa}
+\item
+\url{https://github.com/wbillingsley/tutorial-truthwillsetyoufree}
+\item
+\url{https://github.com/wbillingsley/tutorial-checkmate}
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

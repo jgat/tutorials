@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kd}{public} \PY{k+kt}{int} \PY{n+nf}{getUserCredits}\PY{o}{(}\PY{n}{String} \PY{n}{username}\PY{o}{)} \PY{k+kd}{throws} \PY{n}{DatabaseException} \PY{o}{\PYZob{}}
+    \PY{n}{Connection} \PY{n}{connection} \PY{o}{=} \PY{n}{getConnection}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+    \PY{k}{try} \PY{o}{\PYZob{}}
+        \PY{n}{Statement} \PY{n}{statement} \PY{o}{=} \PY{n}{connection}\PY{o}{.}\PY{n+na}{createStatement}\PY{o}{(}
+            \PY{l+s}{\PYZdq{}SELECT * FROM CREDITS WHERE username=\PYZbs{}\PYZdq{}\PYZdq{}} \PY{o}{+} \PY{n}{username} \PY{o}{+} \PY{l+s}{\PYZdq{}\PYZbs{}\PYZdq{}\PYZdq{}}\PY{o}{)}\PY{o}{;}
+        \PY{n}{ResultSet} \PY{n}{resultSet} \PY{o}{=} \PY{n}{statement}\PY{o}{.}\PY{n+na}{executeQuery}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+        \PY{k+kt}{int} \PY{n}{result} \PY{o}{=} \PY{n}{findCreditsForUser}\PY{o}{(}\PY{n}{username}\PY{o}{,} \PY{n}{resultSet}\PY{o}{)}\PY{o}{;}
+        \PY{n}{resultSet}\PY{o}{.}\PY{n+na}{close}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+        \PY{n}{statement}\PY{o}{.}\PY{n+na}{close}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+        \PY{k}{return} \PY{n}{result}\PY{o}{;}
+    \PY{o}{\PYZcb{}} \PY{k}{catch} \PY{o}{(}\PY{n}{SQLException} \PY{n}{e}\PY{o}{)} \PY{o}{\PYZob{}}
+        \PY{k}{throw} \PY{k}{new} \PY{n+nf}{DatabaseException}\PY{o}{(}\PY{l+s}{\PYZdq{}Unable to get credits\PYZdq{}}\PY{o}{,} \PY{n}{e}\PY{o}{)}\PY{o}{;}
+    \PY{o}{\PYZcb{}}
+\PY{o}{\PYZcb{}}
+\end{Verbatim}
