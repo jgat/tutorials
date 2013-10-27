@@ -1,4 +1,4 @@
-all: practice.pdf solutions.pdf
+all: practice.pdf
 
 %.pdf: %.tex
 	pdflatex $<
