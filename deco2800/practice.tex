@@ -14,7 +14,7 @@ DECO2800/7280 | Design Computing Studio 2 - Testing \& Evaluation
 
 Tutorial Questions
 
-v1.0 (October 2013)
+v1.1 (October 2013)
 \end{center}
 
 \begin{enumerate}
@@ -198,6 +198,38 @@ in this method, and describe what should be done instead.
 
 \input{sample}
 
+\newpage
+
+\item
+An automated teller machine allows customers of a bank to withdraw money.
+The machine works in the following way:
+\begin{itemize}
+\item The machine waits for customers to insert their bank card. A transaction
+begins when a card is inserted, and once the transaction is finished, the
+machine waits for another card.
+\item
+When a transaction begins, the machine prompts for the customer's PIN code.
+The customer enters their PIN, and the machine connects to the bank's systems
+to confirm the PIN is correct. The customer then enters an amount of money to
+withdraw and presses ``OK''.
+The machine will confirm with the bank that the customer has sufficient funds
+to withdraw, then it will eject the customer's card. Once the customer has
+taken the card, the machine will dispense the correct amount of cash, and the
+transaction is complete.
+\item
+If the customer's PIN is incorrect, or if they have insufficient funds, the
+machine will eject the card and end the transaction.
+\item
+If the machine is waiting for input from the keypad, and doesn't receive any
+input for 60 seconds, it will eject the card and end the transaction.
+\item
+If, after a transaction, the machine runs out of available cash, then it
+becomes `out of order', and will not begin any transactions. When the bank's
+staff refill the machine, it will return to normal operation.
+\end{itemize}
+Draw a UML State Diagram to describe the behaviour of the ATM. Include as much
+relevant information as you can.
+
 \item
 Complete the following questions/tasks:
 \begin{enumerate}
@@ -213,6 +245,14 @@ CSSE2003 Exam 2012, Questions 1, 4, 7, 10, 11, 12, 13, 14.
 \url{https://github.com/wbillingsley/tutorial-checkmate}
 \end{enumerate}
 
+\end{enumerate}
+
+\vspace{1cm}
+
+{\bf Changelog:}
+\begin{enumerate}
+\item[v1.0:] Initial version.
+\item[v1.1:] Added question 10, renamed the existing Q10 to Q11.
 \end{enumerate}
 
 \end{document}
