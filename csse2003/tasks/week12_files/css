@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Aldrich';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Aldrich'), url(http://themes.googleusercontent.com/static/fonts/aldrich/v3/VWXaIPGrUapL_Y2vGs0lKALUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+@font-face {
+  font-family: 'Merienda One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Merienda One'), local('MeriendaOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/meriendaone/v4/bCA-uDdUx6nTO8SjzCLXvaRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Oleo Script';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oleo Script'), local('OleoScript-Regular'), url(http://themes.googleusercontent.com/static/fonts/oleoscript/v2/_weQNDK6Uf40CiGFKBBUjrrIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Prosto One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Prosto One'), local('ProstoOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/prostoone/v1/nr9AbvIL_iERRXbqcIK3-73hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(http://themes.googleusercontent.com/static/fonts/ubuntumono/v3/ViZhet7Ak-LRXZMXzuAfkbrIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://theintelligentbook.com/page/506edc0fe4b0735afc70684c -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>page 506edc0fe4b0735afc70684c</title>
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/stylesheets/ib.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/stylesheets/front.css">
+
+    <link rel="shortcut icon" type="image/png" href="http://theintelligentbook.com/assets/images/favicon.png">
+    <script src="./week11_files/jquery-1.7.2.js" type="text/javascript"></script>
+
+    <script src="./week11_files/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="./week11_files/bootstrap-dropdown.js" type="text/javascript"></script>
+
+    
+
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/stylesheets/viewWikiPage.css">
+    <link rel="stylesheet" media="screen" href="http://theintelligentbook.com/assets/stylesheets/slideThemes1.css">
+    <link rel="stylesheet" media="print" href="http://theintelligentbook.com/assets/stylesheets/slideThemes1Print.css">
+    <link href="./week11_files/css" rel="stylesheet" type="text/css">
+    <script src="./week11_files/wikiSubstitutions.js"></script>
+
+
+    </head><body><div class="wikiContent" id="article_text">
+        
+        
+        
+        <div class="themeable ">
+
+    <div class="page-header">
+        <h1>CSSE2003 Tutorial, Week 11&nbsp;<small>- UML Sequence Diagrams, Code coverage<br></small></h1><h1>
+        </h1>
+    </div>
+    <p>Perform a&nbsp;<code>git pull</code>&nbsp;on the examples repository. The package&nbsp;<code>week11</code>&nbsp;contains this week's code. We're still working with a simulation of The Prisoner.</p><p><br></p><h2>Checkmate</h2><p>Number Six thinks he knows how to tell who are the prisoners and who are the wardens: by observing their behaviour. Once he knows for sure who is a prisoner, he'll be able to work with them to plot an escape.</p><div><p></p><ul><li>Read and run the tests in the&nbsp;<code>TestCheckmate</code>&nbsp;class. See that they pass -- and that Number Six yet again has not managed to escape.</li></ul><p></p><p></p><ul><li>Draw a UML Sequence Diagram of the&nbsp;<code>TestCheckmate.testCheckmate</code>&nbsp;method -- include as much information as you can. Your diagram should show the story of why Number Six's plan this week fails.</li></ul><p></p><p></p><ul><li>Draw a UML Sequence Diagram of the&nbsp;<code>Person.escapeWithMe(Person p)</code>&nbsp;method -- include as much information as you can. Note that this time, you don't know which path the branches will take.<br></li></ul><p></p><p></p><ul><li>Draw a UML Sequence Diagram of the&nbsp;<code>Warden.mistreat(Person p, List&lt;? extends Person&gt; bystanders)</code>&nbsp;method -- include as much information as you can. Note that this time, you will need to show the loop.</li></ul><p></p><p></p><p></p><p><br></p><h2>Code coverage</h2><p>The Village is always thinking about its villagers. Particularly, it's always thinking about how they might try to escape. So, this week the&nbsp;<code>Village</code>&nbsp;class also has a method&nbsp;<code>Village.couldConspire(asked, asking)</code>&nbsp;that considers how one prisoner might respond if another prisoner asked them to try to escape together.</p><p></p><p></p><ul><li>Read the code of the&nbsp;<code>Village.couldConspire(asked, asking)</code>&nbsp;method. Also have a look at the tests in the&nbsp;<code>TestVillage</code>&nbsp;class.</li></ul><p></p><p></p><ul><li>Which statements are not covered by the tests? Write additional test cases (like&nbsp;<code>TestVillage.testCase1</code>&nbsp;and&nbsp;<code>TestVillage.testCase2</code>) to cover those statements.</li></ul><p></p><p></p><ul><li>Which branches&nbsp;are not covered by the tests? Write additional test cases to cover those statements.</li></ul><p></p><p></p><ul><li>Which execution paths&nbsp;are not covered by the tests? Write additional test cases to cover those statements.</li></ul><p></p><div><br></div><h2>Quick Sequence Diagram Editor</h2><p>Download the quick sequence diagram editor from <a href="http://sdedit.sourceforge.net/">http://sdedit.sourceforge.net</a> and see if you can produce the "Checkmate" sequence diagrams with it. How do your hand-drawn diagrams compare?</p><div><br></div><div><br></div><p></p><p></p><p></p><p></p></div></div>
+    
+    
+    
+    
+    
+    </div>
+
+    <script>
+    	var pageResizer = function() {
+    		var h = $(window).height()
+    		$(".page").css("min-height", 
+    		    function (index, value) {
+    				return "" + h - ($(this).outerHeight(true) - $(this).height()) + "px"
+    			}
+    		)
+    	}
+    	$(window).resize(pageResizer)
+    	pageResizer()
+    </script>
+
+
+
+    
+
+</body><style type="text/css"></style></html>

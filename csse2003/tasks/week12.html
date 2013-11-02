@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://theintelligentbook.com/page/5079e9a2e4b0560a757ea1ca -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>page 5079e9a2e4b0560a757ea1ca</title>
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/stylesheets/ib.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/stylesheets/front.css">
+
+    <link rel="shortcut icon" type="image/png" href="http://theintelligentbook.com/assets/images/favicon.png">
+    <script src="./week12_files/jquery-1.7.2.js" type="text/javascript"></script>
+
+    <script src="./week12_files/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="./week12_files/bootstrap-dropdown.js" type="text/javascript"></script>
+
+    
+
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/stylesheets/viewWikiPage.css">
+    <link rel="stylesheet" media="screen" href="http://theintelligentbook.com/assets/stylesheets/slideThemes1.css">
+    <link rel="stylesheet" media="print" href="http://theintelligentbook.com/assets/stylesheets/slideThemes1Print.css">
+    <link href="./week12_files/css" rel="stylesheet" type="text/css">
+    <script src="./week12_files/wikiSubstitutions.js"></script>
+
+
+    </head><body><div class="wikiContent" id="article_text">
+        
+        <div class="themeable themeBgWhite themeFontSetGeneva">
+
+    <div class="page-header">
+        <h1>CSSE2003 Tutorial, Week 12&nbsp;<small>- OO Design &amp; bug scenarios<br></small>
+        </h1>
+    </div>
+    <div>There's no code for this week's tutorial.</div><div><br></div><h2>OO Design and Patterns</h2><div>For many weeks now, you've been working with legacy code for a robot game. Today, I'd like you to think about how you would design the game if you were starting from scratch. We'll include a few of the features from the class project. &nbsp;Consider the following features:</div><div><br></div><div><ul><li>Robots are controlled by AI routines in a different package than the core of the game. They can also "change driver" -- that is the AI routine can be swapped to a different one in the middle of a battle.&nbsp;</li><li>Robots can be blessed with particular powers through various means (pickups, "kill-streaks", game set-up)</li><li>A battle can have various victory conditions -- last robot standing, highest score, even first-across-the-finish-line (race on a map)<br></li><li>Objects can be placed on the field of battle. These objects can include everything from pick-ups to land-mines.</li><li>Battles can be constructed in various complex ways using any or all the different features</li><li>All robots in a battle need to be able to query an object that knows about the battle state.</li><li>Robots pass messages to each other via a mediator -- this can for instance enforce the requirement in "team deathmatch" that robots only communicate with other robots on the same team.&nbsp;</li><li>There is a central event system that knows everything that happens in the game (robots firing, bumping into each other, etc) and is responsible for both logging them and passing the events out to relevant listeners.</li><li>One of the listeners to the game is a UI that can graphically depict the game on-screen.</li><li>Also include your team's feature!</li></ul></div><div><br></div><div><ol><li>Identify as many design patterns as you can for the above functionality. What classes (what functionality) would play what role in the pattern?</li><li>Draw a UML Class Diagram of your design.</li></ol><div><br></div></div><h2>Once upon a Time &amp; Fall Out</h2><div>We couldn't leave The Village without giving it an ending. The ending of the tv show <i>The Prisoner</i>&nbsp;is perhaps too bizarre to fit into a software engineering tutorial. So here's the events of the story adjusted a little bit to make at least some sense...&nbsp;</div><div><br></div><h4>Once upon a Time</h4><div>The Village, frustrated at failing to break Number Six, asks a former Number Two to return to the position to have a second try at breaking him. Determined to break Number Six this time, Two takes him an underground chamber to psychologically interrogate him. It all seems to be going well but gradually time is running out, and Number Two becomes more fearful of what will happen if he fails again. As it becomes clear Two won't get the answers in time, some of his staff appear to defect to helping Six, and finally Two breaks down needing Six's help to escape the Village himself, but is left behind in the underground chamber. The staff then offer to take Six to Number One.</div><div><br></div><h4>Fall Out</h4><p>Except they don't. They take him to a staged courtroom in which a judge tells Six he's earned the right to be recognised as an individual, and there is then an extraordinarily strange "transfer of power" ceremony, during which the defeated Two is wheeled in to recognise Six's defeat of him. Two, no longer loyal to the village, suggests this is another ruse -- the Village pretending to offer Six what he wants. At an unexpected moment in the proceedings, Six breaks free and sets off an emergency that means the Village will have to be evacuated (rather strangely involving a rocket in one of the underground chambers). He releases Two and they fight their way out from the guards amid the commotion of the evacuating village. The Village turns out to be on the coast of Wales, and they drive a stolen truck back to London.</p><p><br>Two and Six part ways -- and then we see Two heading into a government building, while Six returns home and takes his old Lotus car out for a drive thinking he is enjoying his freedom. But in the last shot, the door to Six's house opens automatically with the same sound as the doors in the Village, and (as in the first episode when he's kidnapped) the number on his front door is "1". &nbsp;Off screen, perhaps, the government official Two tells his colleagues he thinks Six will fit right in now...&nbsp;</p><p><br>McGoohan (star, writer, and producer of the show) was seemingly pushing a few very political messages that were quite popular in 1970s science fiction -- one of which is that although Six thinks he has escaped, the countries we live in are simply bigger versions of the Village.</p><div><br></div><h4>The Question</h4><p>Leaving aside McGoohan's politics, we're going to use that as a segue into a question.</p><div><ul><li>Imagine the Village has gone national, and there are all sorts of systems collecting data about every kind of event you could think of in the country (financial transactions, travel, who you communicate with online, etc.) &nbsp;But it's so big it keeps breaking down. How can the Village technicians track down, fix, and test the failures:</li><ul><li>Suppose a financial system was reporting the value of transactions erroneously. How would you track down the bug, and how would you test you'd fixed it?</li><li>Suppose in peak hour, the train monitoring system keeps crashing. How would you find out what the limiting factor is, and how would you test you'd fixed it?</li></ul></ul><br><ul><li>And a very open-ended question to finish:</li><ul><li>Suppose there's a central database all these systems report back to. &nbsp;And they are all reporting all the time -- lots of asynchronous interleaved transactions. Only very occasionally the reports seem to get slightly mucked up when saving them in this central database. What possibilities are there for what's going wrong? How would you track them down?</li></ul></ul></div></div>
+    
+    
+    
+    
+    </div>
+
+    <script>
+    	var pageResizer = function() {
+    		var h = $(window).height()
+    		$(".page").css("min-height", 
+    		    function (index, value) {
+    				return "" + h - ($(this).outerHeight(true) - $(this).height()) + "px"
+    			}
+    		)
+    	}
+    	$(window).resize(pageResizer)
+    	pageResizer()
+    </script>
+
+
+
+    
+
+</body><style type="text/css"></style></html>

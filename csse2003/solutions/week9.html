@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://theintelligentbook.com/page/508f5689e4b0799fc97e7030 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>page 508f5689e4b0799fc97e7030</title>
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/stylesheets/ib.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/stylesheets/front.css">
+
+    <link rel="shortcut icon" type="image/png" href="http://theintelligentbook.com/assets/images/favicon.png">
+    <script src="./week9_files/jquery-1.7.2.js" type="text/javascript"></script>
+
+    <script src="./week9_files/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="./week9_files/bootstrap-dropdown.js" type="text/javascript"></script>
+
+    
+
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" media="screen, print" href="http://theintelligentbook.com/assets/stylesheets/viewWikiPage.css">
+    <link rel="stylesheet" media="screen" href="http://theintelligentbook.com/assets/stylesheets/slideThemes1.css">
+    <link rel="stylesheet" media="print" href="http://theintelligentbook.com/assets/stylesheets/slideThemes1Print.css">
+    <link href="./week9_files/css" rel="stylesheet" type="text/css">
+    <script src="./week9_files/wikiSubstitutions.js"></script>
+
+
+    <link href="./week9_files/prettify.css" type="text/css" rel="stylesheet"></head><body><div class="wikiContent" id="article_text">
+        
+        
+        
+        <h1>Week 9 Tutorial Solutions</h1><div><br></div><h2>The Chimes of Big Ben</h2>
+    
+    
+    <div><br></div><div><ul><li>What's changed about the Village class to make the story happen this week?</li></ul></div><div>The&nbsp;<code>getOccupants</code>&nbsp;method doesn't return the set that's used internally, but instead returns a copy of the set. That way, any modifications done to the set which gets returned are not reflected in the village itself.</div><div><br></div><div>It's important in writing software to ensure that private immutable fields can't accidentally be accessed through getter methods. If you want a getter method for a mutable field, make sure the getter returns a copy of the field. Similarly, if you want a setter method for a mutable field, make sure it sets a copy -- if you don't, then whoever calls the setter method has control over the field (since they had control over the parameter which got passed in).</div><div><br></div><div>By doing this, you guarantee that no one outside the class has access to the field.&nbsp;If it's an immutable field, it's not necessary to have getters/setters make copies, because the object can't be modified outside of the class anyway.</div><div><br></div><div><ul><li>If sets were immutable, how would the Village change (what would&nbsp;<code>enter</code>&nbsp;need to do), and could anyone escape or be deceived?</li></ul></div><div>The&nbsp;<code>enter</code>&nbsp;method would need to reassign the&nbsp;<code>occupants</code>&nbsp;field with an updated set. Something like this:</div><div><br></div><div><pre class="linenums prettyprint"><ol class="linenums"><li class="L0"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Village</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">Set</span><span class="pun">&lt;</span><span class="typ">Person</span><span class="pun">&gt;</span><span class="pln"> occupants </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ImmutableSet</span><span class="pun">&lt;</span><span class="typ">Person</span><span class="pun">&gt;();</span></li><li class="L2"><span class="pln">&nbsp;</span></li><li class="L3"><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> enter</span><span class="pun">(</span><span class="typ">Person</span><span class="pln"> p</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">        occupants </span><span class="pun">=</span><span class="pln"> occupants</span><span class="pun">.</span><span class="kwd">and</span><span class="pun">(</span><span class="pln">p</span><span class="pun">);</span></li><li class="L5"><span class="pln">    </span><span class="pun">}</span></li><li class="L6"><span class="pln">&nbsp;</span></li><li class="L7"><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Set</span><span class="pun">&lt;</span><span class="typ">Person</span><span class="pun">&gt;</span><span class="pln"> getOccupants</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> occupants</span><span class="pun">;</span></li><li class="L9"><span class="pln">    </span><span class="pun">}</span></li><li class="L0"><span class="pun">}</span></li></ol></pre></div><div>where the&nbsp;<code>and</code>&nbsp;method returns a new set which contains all elements of the old set as well as the new Person.&nbsp;Since sets are now immutable (in this hypothetical scenario), the&nbsp;<code>getOccupants</code>&nbsp;method doesn't need to make a copy of the set.</div><div><br></div>
+
+
+<h2>Design Patterns and UML Exercise</h2><div><br></div><div>Think about how we'd redesign the program to model the following. Identify as many design patterns as you can in the above functionality. Which classes would play which roles in each pattern? Sketch out the UML Class Diagram of your design.</div><div><br></div><div>Note these answers are only possible answers. Other answers may also be valid. The point is whether you can justify it (by describing which classes play which roles in the pattern). The references to the different roles in the pattern can be found in the lecture slides from <a data-ib-topic="Lecture Six">lecture 6</a>.</div><div><br></div><div><ul><li>Number Two handles the day-to-day running of the Village. But Number Two is not a fixed person - periodically Number Two is replaced. Sometimes an existing villager is asked to fill the role of Number Two.</li></ul><div>The decorator pattern, since the added functionality of being "Number Two" can be dynamically added or removed from objects, which satisfies the requirement that Number Two be replaceable.</div><div><br></div><div>A class <code>NumberTwo</code> would play the role of the "Decorator", and the <code>Person</code> class would play the role of "Component".</div><div><br></div><ul><li>When people enter the village, they are restless. Whenever they talk to anyone, they talk about escape. After a while, their will is broken, and they settle into life in the village. Whenever&nbsp;they&nbsp;talk&nbsp;to&nbsp;anyone,&nbsp;they&nbsp;talk&nbsp;about&nbsp;the&nbsp;day’s&nbsp;flavour&nbsp;of&nbsp;ice&nbsp;cream.&nbsp;But&nbsp;sometimes&nbsp;a&nbsp;settled&nbsp;villager&nbsp;can&nbsp;be&nbsp;made&nbsp;restless&nbsp;again.</li></ul><div>The state pattern, since the description talks about the person's state of mind having an impact on their behaviour.</div><div><br></div><div>The&nbsp;<code>Person</code>&nbsp;class acts as the "Context"; also add an interface&nbsp;<code>MentalState</code>&nbsp;to act as the state, along with two implementing classes&nbsp;<code>Restless</code>&nbsp;and&nbsp;<code>Settled</code> to act as the concrete states as described by the pattern.</div><div><br></div><ul><li>The village wardens are periodically assigned to spy on a villager, and told to watch for any changes in their behaviour. If a villager becomes restless when a warden is spying on them, the warden will know immediately and notify Number Two.</li></ul><div>The observer pattern, because the change of state of the villager should notify the warden.</div><div><br></div><div>The&nbsp;<code>Person</code>&nbsp;class acts as the "Subject" in the pattern, and a&nbsp;<code>Warden</code>&nbsp;class plays the role of the "Observer".</div><div><br></div><ul><li>Part of Number Two’s job is to randomly order a spot check on all villagers. It’s up to Number Two to decide what that check should be. One week, it might be to check they are all in their beds at night, not out trying to escape. Another week it might be that their fingernails are clean (not dirty from digging escape tunnels).<br></li></ul></div><div>The visitor pattern, since there are many distinct operations to perform on the villagers.</div><div><br></div><div>The&nbsp;<code>Person</code>&nbsp;class plays the role of the "Element" in the pattern,&nbsp;<code>Village</code>&nbsp;plays the role of the ObjectStructure, and we can have an interface&nbsp;<code>SpotCheck</code>&nbsp;to play the role of the Visitor, with various implementing classes to represent the different types of checks.</div><div><br></div>
+    
+    
+    
+    </div>
+
+    <script>
+    	var pageResizer = function() {
+    		var h = $(window).height()
+    		$(".page").css("min-height", 
+    		    function (index, value) {
+    				return "" + h - ($(this).outerHeight(true) - $(this).height()) + "px"
+    			}
+    		)
+    	}
+    	$(window).resize(pageResizer)
+    	pageResizer()
+    </script>
+
+
+
+    
+
+</body><style type="text/css"></style></html>
