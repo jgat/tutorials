@@ -1,7 +1,7 @@
 # Solving Time Compexity
 
 <blockquote>
-Comment: This was originally a newsgroup post I wrote in November 2011 to answer a student's question about time complexity questions on the exam. After this post, I wrote a more detailed discussion in the <a href="http://itee.uq.edu.au/~csse1001/_notes/complexity.html#calculating">course notes</a>, based on this one.
+Comment: This was originally a newsgroup post I wrote in November 2011 to answer a student's question about time complexity questions on the exam. After this post, I wrote a more detailed discussion in the <a href="http://csse1001.uqcloud.net/notes/complexity.html#calculating-rate-of-growth">course notes</a>, based on this one.
 </blockquote>
 
 _This document aims to show how to classify the time complexity of a function, as is usually required in CSSE1001 exams._
@@ -26,7 +26,7 @@ for i in range(N):
 ```python
 for i in range(N):
     for j in range(i):
-    do_something(i,j)
+        do_something(i,j)
 ```
 
 Note that the size of the inner loop in the second example is actually based on the loop variable in the outer loop (i), but 'i' is roughly proportional to N (with lots of hand-waving), so it's still quadratic.
